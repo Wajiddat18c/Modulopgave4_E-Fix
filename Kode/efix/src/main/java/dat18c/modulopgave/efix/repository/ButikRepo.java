@@ -15,7 +15,7 @@ public class ButikRepo {
     @Autowired
     JdbcTemplate template;
 
-    public List<Butik> fetchAllBuik(){
+    public List<Butik> fetchAllButik(){
 
         String sql = "SELECT * FROM butik";
 
