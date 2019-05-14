@@ -19,23 +19,23 @@
 <form action="/update" method="post">
     <div class="form-group">
         <!-- hidden input felt til at få id med -->
-        <input type="text" name="idButik" th:value="${butik.idButik}">
-        <input type="text" name="navn" class="form-control" th:value="${butik.navn}">
+        <input type="hidden" name="idButik" th:value="${butikker.idButik}">
+        <input type="text" name="navn" class="form-control" th:value="${butikker.navn}">
     </div>
     <div class="form-group">
-        <input type="text" name="adresse" class="form-control" th:value="${butik.adresse}">
+        <input type="text" name="adresse" class="form-control" th:value="${butikker.adresse}">
     </div>
     <div class="form-group">
-        <input type="text" name="mobilNummer" class="form-control" th:value="${butik.mobilNummer}">
+        <input type="text" name="mobilNummer" class="form-control" th:value="${butikker.mobilNummer}">
     </div>
     <div class="form-group">
-        <input type="text" name="beskrivelse" class="form-control" th:value="${butik.beskrivelse}">
+        <input type="text" name="beskrivelse" class="form-control" th:value="${butikker.beskrivelse}">
     </div>
     <div class="form-group">
-        <input type="text" name="aabningstider" class="form-control" th:value="${butik.aabningstider}">
+        <input type="text" name="aabningstider" class="form-control" th:value="${butikker.aabningstider}">
     </div>
     <div class="form-group">
-        <input type="text" name="email" class="form-control" th:value="${butik.email}">
+        <input type="text" name="email" class="form-control" th:value="${butikker.email}">
     </div>
     <!-- når der trykkes submit udføres action -->
     <button type="submit" class="btn btn-primary">Opdater</button>
