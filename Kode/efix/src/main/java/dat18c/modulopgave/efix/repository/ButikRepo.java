@@ -17,11 +17,20 @@ public class ButikRepo {
 
     public List<Butik> fetchAllButik(){
 
-        String sql = "SELECT * FROM butik";
+        String sql = "SELECT * FROM BUTIK";
 
         RowMapper<Butik> rowMapper = new BeanPropertyRowMapper<>(Butik.class);
 
         return template.query(sql, rowMapper);
+    }
+
+    public Butik findButikById(int idButik){
+        //sql query der finder person vha. id
+        String sql ="SELECT * FROM BUTIK WHERE idButik=?";
+        //instantier rowmapper til at mappe query result til person object
+        RowMapper<Butik> rowMapper = new BeanPropertyRowMapper<>(Butik.class);
+        //udfør query med JdbcTemplate
+        return template.queryForObject(sql, rowMapper, idButik);
     }
 
 }
