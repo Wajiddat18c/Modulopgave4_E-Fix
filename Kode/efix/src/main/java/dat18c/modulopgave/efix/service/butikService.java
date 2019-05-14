@@ -17,4 +17,7 @@ public class ButikService {
 
         return butikRepo.fetchAllButik();
     }
+    public Butik findButikById(int idButik){
+        return butikRepo.findButikById(idButik);
+    }
 }
