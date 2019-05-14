@@ -8,7 +8,7 @@ public class Butik {
 
     @Id
     private int idButik;
-    private String name;
+    private String navn;
     private String adresse;
     private int mobilNummer;
     private String beskrivelse;
@@ -18,9 +18,9 @@ public class Butik {
     public Butik() {
     }
 
-    public Butik(int idButik, String name, String adresse, int mobilNummer, String beskrivelse, String aabningstider, String email) {
+    public Butik(int idButik, String navn, String adresse, int mobilNummer, String beskrivelse, String aabningstider, String email) {
         this.idButik = idButik;
-        this.name = name;
+        this.navn = navn;
         this.adresse = adresse;
         this.mobilNummer = mobilNummer;
         this.beskrivelse = beskrivelse;
@@ -36,12 +36,12 @@ public class Butik {
         this.idButik = idButik;
     }
 
-    public String getName() {
-        return name;
+    public String getNavn() {
+        return navn;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNavn(String navn) {
+        this.navn = navn;
     }
 
     public String getAdresse() {
