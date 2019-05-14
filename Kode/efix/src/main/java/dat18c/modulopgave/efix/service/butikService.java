@@ -20,4 +20,8 @@ public class ButikService {
     public Butik findButikById(int idButik){
         return butikRepo.findButikById(idButik);
     }
+
+    public void updateButik(Butik butik){
+        butikRepo.updateButik(butik);
+    }
 }
