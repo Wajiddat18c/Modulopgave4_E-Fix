@@ -1,10 +1,12 @@
 package dat18c.modulopgave.efix.controller;
 
+import dat18c.modulopgave.efix.model.Butik;
 import dat18c.modulopgave.efix.service.ButikService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 
 @Controller
 public class HomeController {
@@ -18,5 +20,22 @@ public class HomeController {
         model.addAttribute("butikker", butikService.fetchAllButiks());
 
         return "forside";
+    }
+
+    // få fat id fra stien vha. @PathVariable
+    @GetMapping("/update/{idButik}")
+    public String showUpdate(@PathVariable("idButik") int idButik, Model model){
+        //tilføj person med id til viewmodel
+        model.addAttribute("butikker", butikService.findButikById(idButik));
+        return "update";
+    }
+
+    // opdater person - @ModelAttribute bruges til at få fat i person fra post
+    @PostMapping("/update")
+    public String updateDoIt(@ModelAttribute Butik butik){
+        //kald update service
+        butikService.updateButik(butik);
+        //sikr mod refresh fejl og sletter igen
+        return "redirect:/forside";
     }
 }
