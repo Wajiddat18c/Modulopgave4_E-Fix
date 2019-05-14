@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class butik {
+public class Butik {
 
     @Id
     private int idButik;
@@ -15,10 +15,10 @@ public class butik {
     private String aabningstider;
     private String email;
 
-    public butik() {
+    public Butik() {
     }
 
-    public butik(int idButik, String name, String adresse, int mobilNummer, String beskrivelse, String aabningstider, String email) {
+    public Butik(int idButik, String name, String adresse, int mobilNummer, String beskrivelse, String aabningstider, String email) {
         this.idButik = idButik;
         this.name = name;
         this.adresse = adresse;
