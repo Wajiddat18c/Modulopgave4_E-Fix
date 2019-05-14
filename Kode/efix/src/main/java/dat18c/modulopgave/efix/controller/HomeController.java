@@ -15,7 +15,7 @@ public class HomeController {
     @GetMapping("/forside")
     public String butikData(Model model){
 
-        model.addAttribute("butiks", butikService.fetchAllButiks());
+        model.addAttribute("butikker", butikService.fetchAllButiks());
 
         return "forside";
     }
