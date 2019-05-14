@@ -35,7 +35,7 @@ public class ButikRepo {
 
     public void updateButik(Butik butik){
         //sql statement der opdaterer rækken id med butik objektet
-        String sql ="UPDATE butik SET nvan=?, adresse=?, mobilNummer=?, beskrivelse=?, aabningstider=?, email=? WHERE id=?";
+        String sql ="UPDATE butik SET navn=?, adresse=?, mobilNummer=?, beskrivelse=?, aabningstider=?, email=? WHERE idButik=?";
         //udfør update med JdbcTemplate
         template.update(sql, butik.getNavn(), butik.getAdresse(), butik.getMobilNummer(), butik.getBeskrivelse(), butik.getAabningstider(), butik.getEmail(), butik.getIdButik());
     }
