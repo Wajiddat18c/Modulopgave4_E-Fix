@@ -1,6 +1,7 @@
 package dat18c.modulopgave.efix.controller;
 
 import dat18c.modulopgave.efix.model.Butik;
+import dat18c.modulopgave.efix.model.Produkter;
 import dat18c.modulopgave.efix.service.ButikService;
 import dat18c.modulopgave.efix.service.ProdukterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,17 @@ public class HomeController {
         model.addAttribute("produkt", produkterService.fetchAllProdukters());
 
         return "prod";
+    }
+
+    @GetMapping("/create")
+    public String showCreate(){
+        return "create";
+    }
+
+    @PostMapping("/create")
+    public String create(@ModelAttribute Produkter produkter){
+        produkterService.addProdukter(produkter);
+        return "redirect:/prod";
     }
 
 }
