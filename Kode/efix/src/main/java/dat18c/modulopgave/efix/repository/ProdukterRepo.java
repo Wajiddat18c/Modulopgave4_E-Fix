@@ -42,4 +42,19 @@ public class ProdukterRepo {
         template.update(sql, produkter.getIdProdukter(), produkter.getNavn(), produkter.getPris(), produkter.getBeskrivelse(), produkter.getKategori_idKategori());
     }
 
+    public void deleteProdukter(int idProdukter){
+        // delete statement
+        String sql = "DELETE FROM PRODUKTER WHERE idProdukter=?";
+
+        //kald update med delete statement og id
+        template.update(sql, idProdukter);
+    }
+
+    public void updateProdukter(Produkter produkter){
+        //sql statement der opdaterer rækken id med person objektet
+        String sql ="UPDATE PRODUKTER SET navn=?, pris=?, beskrivelse=?, Kategori_idKategori=? WHERE idProdukter=?";
+        //udfør update med JdbcTemplate
+        template.update(sql, produkter.getNavn(), produkter.getPris(), produkter.getBeskrivelse(), produkter.getKategori_idKategori(), produkter.getIdProdukter());
+    }
+
 }
