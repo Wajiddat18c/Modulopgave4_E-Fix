@@ -20,4 +20,8 @@ public class ProdukterService {
     public Produkter findProdukterById(int idProdukter){
         return produkterRepo.findProdukterById(idProdukter);
     }
+
+    public void addProdukter(Produkter produkter){
+        produkterRepo.addProdukter(produkter);
+    }
 }
