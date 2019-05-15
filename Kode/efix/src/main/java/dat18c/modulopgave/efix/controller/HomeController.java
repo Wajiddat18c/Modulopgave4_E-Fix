@@ -18,6 +18,11 @@ public class HomeController {
     @Autowired
     ProdukterService produkterService;
 
+    @GetMapping("/")
+    public String home(){
+        return "index";
+    }
+
     @GetMapping("/butik")
     public String butikData(Model model){
 
@@ -62,4 +67,22 @@ public class HomeController {
         return "redirect:/prod";
     }
 
+    @GetMapping("/delete/{iden}")
+    public String delete(@PathVariable("iden") int idProdukter){
+        produkterService.deleteProdukter(idProdukter);
+        return "redirect:/prod";
+    }
+
+    @GetMapping("/updateprod/{id}")
+    public String Update(@PathVariable("id") int idProdukter, Model model){
+        model.addAttribute("produkt", produkterService.findProdukterById(idProdukter));
+        return "updateprod";
+    }
+
+    // opdater person - @ModelAttribute bruges til at få fat i person fra post
+    @PostMapping("/updateprod")
+    public String updateIt(@ModelAttribute Produkter produkter){
+        produkterService.updateProdukter(produkter);
+        return "redirect:/prod";
+    }
 }
