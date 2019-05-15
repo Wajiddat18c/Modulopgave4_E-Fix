@@ -34,4 +34,12 @@ public class ProdukterRepo {
         return template.queryForObject(sql, rowMapper, idProdukter);
     }
 
+
+    public void addProdukter(Produkter produkter) {
+        // prepared statement
+        String sql = "INSERT INTO PRODUKTER (idProdukter, navn, pris, beskrivelse, Kategori_idKategori) VALUES (?, ?, ?, ?, ?)";
+        // udfør insert med jdbc template
+        template.update(sql, produkter.getIdProdukter(), produkter.getNavn(), produkter.getPris(), produkter.getBeskrivelse(), produkter.getKategori_idKategori());
+    }
+
 }
