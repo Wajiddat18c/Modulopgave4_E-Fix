@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.request.WebRequest;
 
 @Controller
 public class HomeController {
@@ -14,12 +13,12 @@ public class HomeController {
     @Autowired
     ButikService butikService;
 
-    @GetMapping("/forside")
+    @GetMapping("/butik")
     public String butikData(Model model){
 
         model.addAttribute("butikker", butikService.fetchAllButiks());
 
-        return "forside";
+        return "butik.html";
     }
 
     // få fat id fra stien vha. @PathVariable
@@ -36,6 +35,6 @@ public class HomeController {
         //kald update service
         butikService.updateButik(butik);
         //sikr mod refresh fejl og sletter igen
-        return "redirect:/forside";
+        return "redirect:/butik";
     }
 }
