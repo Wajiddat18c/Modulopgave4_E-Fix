@@ -25,9 +25,9 @@ public class ButikRepo {
     }
 
     public Butik findButikById(int idButik){
-        //sql query der finder person vha. id
+        //sql query der finder butik vha. id
         String sql ="SELECT * FROM BUTIK WHERE idButik=?";
-        //instantier rowmapper til at mappe query result til person object
+        //instantier rowmapper til at mappe query result til butik object
         RowMapper<Butik> rowMapper = new BeanPropertyRowMapper<>(Butik.class);
         //udfør query med JdbcTemplate
         return template.queryForObject(sql, rowMapper, idButik);
