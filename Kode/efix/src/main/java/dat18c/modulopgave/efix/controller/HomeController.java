@@ -2,6 +2,7 @@ package dat18c.modulopgave.efix.controller;
 
 import dat18c.modulopgave.efix.model.Butik;
 import dat18c.modulopgave.efix.service.ButikService;
+import dat18c.modulopgave.efix.service.ProdukterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,12 +14,15 @@ public class HomeController {
     @Autowired
     ButikService butikService;
 
+    @Autowired
+    ProdukterService produkterService;
+
     @GetMapping("/butik")
     public String butikData(Model model){
 
         model.addAttribute("butikker", butikService.fetchAllButiks());
 
-        return "butik.html";
+        return "butik";
     }
 
     // få fat id fra stien vha. @PathVariable
@@ -37,4 +41,13 @@ public class HomeController {
         //sikr mod refresh fejl og sletter igen
         return "redirect:/butik";
     }
+
+    @GetMapping("/prod")
+    public String produkterData(Model model){
+
+        model.addAttribute("produkt", produkterService.fetchAllProdukters());
+
+        return "prod";
+    }
+
 }
