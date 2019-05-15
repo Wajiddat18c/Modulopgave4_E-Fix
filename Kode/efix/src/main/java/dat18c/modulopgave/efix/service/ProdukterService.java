@@ -24,4 +24,12 @@ public class ProdukterService {
     public void addProdukter(Produkter produkter){
         produkterRepo.addProdukter(produkter);
     }
+
+    public void deleteProdukter(int idProdukter){
+        produkterRepo.deleteProdukter(idProdukter);
+    }
+
+    public void updateProdukter(Produkter produkter){
+        produkterRepo.updateProdukter(produkter);
+    }
 }
