@@ -85,4 +85,5 @@ public class HomeController {
         produkterService.updateProdukter(produkter);
         return "redirect:/prod";
     }
+
 }
