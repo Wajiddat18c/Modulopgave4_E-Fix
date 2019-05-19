@@ -1,8 +1,10 @@
 package dat18c.modulopgave.efix.controller;
 
 import dat18c.modulopgave.efix.model.Butik;
+import dat18c.modulopgave.efix.model.Nyhedsbrev;
 import dat18c.modulopgave.efix.model.Produkter;
 import dat18c.modulopgave.efix.service.ButikService;
+import dat18c.modulopgave.efix.service.NyhedsbrevService;
 import dat18c.modulopgave.efix.service.ProdukterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,9 @@ public class HomeController {
 
     @Autowired
     ProdukterService produkterService;
+
+    @Autowired
+    NyhedsbrevService nyhedsbrevService;
 
     @GetMapping("/")
     public String home(){
@@ -84,6 +89,24 @@ public class HomeController {
     public String updateIt(@ModelAttribute Produkter produkter){
         produkterService.updateProdukter(produkter);
         return "redirect:/prod";
+    }
+
+    @GetMapping("/nyhed")
+    public String nyhedsbrevData(Model model){
+
+        model.addAttribute("nyhed", nyhedsbrevService.fetchAllNyhedsbrev());
+
+        return "nyhed";
+    }
+    @GetMapping("/addnyhed")
+    public String showAddNyhed(){
+        return "addnyhed";
+    }
+
+    @PostMapping("/addnyhed")
+    public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
+        nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
+        return "redirect:/nyhed";
     }
 
 }
