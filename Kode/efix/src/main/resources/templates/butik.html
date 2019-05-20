@@ -27,7 +27,7 @@
 </p>
 <p th:each="butik : ${butikker}">
     <button type="button" class="btn btn-info">
-        <a style="color:red;" th:href="@{'/update/' + ${butik.idButik}}">opdater</a>
+        <a style="color:red;" th:href="@{'/admin/update/' + ${butik.idButik}}">opdater</a>
     </button>
 </p>
 

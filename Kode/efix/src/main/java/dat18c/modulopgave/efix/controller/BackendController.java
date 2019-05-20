@@ -12,7 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class HomeController {
+@RequestMapping("/admin/")
+public class BackendController {
 
     @Autowired
     ButikService butikService;
@@ -25,7 +26,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(){
-        return "index";
+        return "adminindex";
     }
 
     @GetMapping("/butik")
@@ -50,7 +51,7 @@ public class HomeController {
         //kald update service
         butikService.updateButik(butik);
         //sikr mod refresh fejl og sletter igen
-        return "redirect:/butik";
+        return "redirect:/admin/butik";
     }
 
     @GetMapping("/prod")
@@ -69,13 +70,13 @@ public class HomeController {
     @PostMapping("/create")
     public String create(@ModelAttribute Produkter produkter){
         produkterService.addProdukter(produkter);
-        return "redirect:/prod";
+        return "redirect:/admin/prod";
     }
 
     @GetMapping("/delete/{iden}")
     public String delete(@PathVariable("iden") int idProdukter){
         produkterService.deleteProdukter(idProdukter);
-        return "redirect:/prod";
+        return "redirect:/admin/prod";
     }
 
     @GetMapping("/updateprod/{id}")
@@ -88,7 +89,7 @@ public class HomeController {
     @PostMapping("/updateprod")
     public String updateIt(@ModelAttribute Produkter produkter){
         produkterService.updateProdukter(produkter);
-        return "redirect:/prod";
+        return "redirect:/admin/prod";
     }
 
     @GetMapping("/nyhed")
@@ -106,12 +107,12 @@ public class HomeController {
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
         nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
-        return "redirect:/nyhed";
+        return "redirect:/admin/nyhed";
     }
     @GetMapping("deletenyhed/{id}")
     public String unsubscribe(@PathVariable int id){
         nyhedsbrevService.deleteNyhedsbrev(id);
-        return "redirect:/nyhed";
+        return "redirect:/admin/nyhed";
     }
 
 }

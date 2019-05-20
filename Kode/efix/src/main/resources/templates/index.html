@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments/main :: head">
+<head th:replace="fragments/frontend :: head">
 </head>
 <body>
-<nav th:replace="fragments/main :: nav" />
+<nav th:replace="fragments/frontend :: nav" />
 <div class="container">
-<h2>Dette for admin!</h2>
-
-<p> <a href="butik"> Tryk her </a>for at opdatere info omkring Butikken! </p>
-<p> <a href="prod"> Tryk her </a>for at oprette/opdatere/slette Produkter! </p>
-<p> <a href="nyhed"> Tryk her </a>for at tilmelde nyhedsbrev! </p>
-
-
-
+    <div class="row">
+        <div class="col-md-6">
+            <h2>
+                <a href="/admin/">
+                    Admin login
+                </a>
+            </h2>
+        </div>
+    </div>
 </div>
 </body>
 </html>

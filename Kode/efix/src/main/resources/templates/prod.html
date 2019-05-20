@@ -9,15 +9,15 @@
     <h1>Visning af produkter</h1>
 
     <p th:each="produkter : ${produkt}">
-        <a style="color:blueviolet;" th:href="@{'/updateprod/' + ${produkter.idProdukter}}">Opdater</a>
+        <a style="color:blueviolet;" th:href="@{'/admin/updateprod/' + ${produkter.idProdukter}}">Opdater</a>
         <span th:text="${produkter.navn}"/>
         <span th:text="${produkter.pris}"/>
         <span th:text="${produkter.beskrivelse}"/>
         <span th:text="${produkter.Kategori_idKategori}"/>
-        <a style="color:red;" th:href="@{'/delete/' + ${produkter.idProdukter}}">Slet</a>
+        <a style="color:red;" th:href="@{'/admin/delete/' + ${produkter.idProdukter}}">Slet</a>
     </p>
 
-        <a href="/create">Opret en produkt</a>
+        <a href="/admin/create">Opret en produkt</a>
 
 </div>
 </body>
