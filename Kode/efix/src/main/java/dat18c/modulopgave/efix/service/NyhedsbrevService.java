@@ -20,4 +20,8 @@ public class NyhedsbrevService {
     public void addNyhedsbrev(Nyhedsbrev nyhedsbrev){
         nyhedsbrevRepo.addNyhedsbrev(nyhedsbrev);
     }
+
+    public void deleteNyhedsbrev(int id){
+        nyhedsbrevRepo.deleteNyhedsbrev(id);
+    }
 }

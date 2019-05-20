@@ -28,4 +28,10 @@ public class NyhedsbrevRepo {
 
         template.update(sql, nyhedsbrev.getIdNyhedsbrev(), nyhedsbrev.geteMail());
     }
+
+    public void deleteNyhedsbrev(int id){
+        String sql = "DELETE FROM nyhedsbrev WHERE idNyhedsbrev="+id;
+
+        template.update(sql);
+    }
 }

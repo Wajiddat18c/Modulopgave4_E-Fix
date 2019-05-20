@@ -108,5 +108,10 @@ public class HomeController {
         nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
         return "redirect:/nyhed";
     }
+    @GetMapping("deletenyhed/{id}")
+    public String unsubscribe(@PathVariable int id){
+        nyhedsbrevService.deleteNyhedsbrev(id);
+        return "redirect:/nyhed";
+    }
 
 }

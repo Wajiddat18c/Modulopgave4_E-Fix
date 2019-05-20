@@ -16,7 +16,7 @@
 <h1>Visning af produkter</h1>
 
 <p th:each="nyhedsbrev : ${nyhed}">
-    <span th:text="${nyhedsbrev.eMail}"/>
+    <span th:text="${nyhedsbrev.eMail}"/><a th:href="@{'/deletenyhed/'+${nyhedsbrev.idNyhedsbrev}}" >Slet abonnement</a>
 </p>
 
 <a href="/addnyhed">Tilmeld nyhedsbrev</a>
