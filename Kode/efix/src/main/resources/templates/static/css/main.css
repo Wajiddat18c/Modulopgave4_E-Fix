@@ -1,0 +1,8 @@
+.kategoriliste{
+    display: inline;
+}
+
+.kategoriliste:before{
+    content: 'Opdatere Kategori';
+    color: black;
+}

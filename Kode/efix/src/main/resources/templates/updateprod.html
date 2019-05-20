@@ -1,61 +1,39 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <title>Update produkt!</title>
-
-    <style>
-        .kategoriliste{
-            display: inline;
-        }
-
-        .kategoriliste:before{
-            content: 'Opdatere Kategori';
-            color: black;
-        }
-    </style>
+<head th:replace="fragments/main :: head">
 </head>
-
 <body>
+<nav th:replace="fragments/main :: nav" />
+<div class="container">
 
-<h1>Opdater produkt</h1>
+    <h1>Opdater produkt</h1>
 
-<!-- formular til indtastning af person -->
-<form action="/updateprod" method="post">
-    <div class="form-group">
-        <!-- hidden input felt til at få id med -->
-        <input type="hidden" name="idProdukter" th:value="${produkt.idProdukter}">
-        <input type="text" name="navn" class="form-control" th:value="${produkt.navn}">
-    </div>
-    <div class="form-group">
-        <input type="text" name="pris" class="form-control" th:value="${produkt.pris}">
-    </div>
-    <div class="form-group">
-        <input type="text" name="beskrivelse" class="form-control" th:value="${produkt.beskrivelse}">
-    </div>
+    <!-- formular til indtastning af person -->
+    <form action="/updateprod" method="post">
+        <div class="form-group">
+            <!-- hidden input felt til at få id med -->
+            <input type="hidden" name="idProdukter" th:value="${produkt.idProdukter}">
+            <input type="text" name="navn" class="form-control" th:value="${produkt.navn}">
+        </div>
+        <div class="form-group">
+            <input type="text" name="pris" class="form-control" th:value="${produkt.pris}">
+        </div>
+        <div class="form-group">
+            <input type="text" name="beskrivelse" class="form-control" th:value="${produkt.beskrivelse}">
+        </div>
 
-    </div>
-    <div class="kategoriliste">
-        <select name="Kategori_idKategori">
-            <option value="1">Mobil</option>
-            <option value="2">Pc</option>
-            <option value="3">Tilbehør</option>
-        </select>
-    </div>
+        </div>
+        <div class="kategoriliste">
+            <select name="Kategori_idKategori">
+                <option value="1">Mobil</option>
+                <option value="2">Pc</option>
+                <option value="3">Tilbehør</option>
+            </select>
+        </div>
 
-    <!-- når der trykkes submit udføres action -->
-    <button type="submit" class="btn btn-primary">Opdater</button>
-</form>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <!-- når der trykkes submit udføres action -->
+        <button type="submit" class="btn btn-primary">Opdater</button>
+    </form>
+</body>
 </body>
 </html>
