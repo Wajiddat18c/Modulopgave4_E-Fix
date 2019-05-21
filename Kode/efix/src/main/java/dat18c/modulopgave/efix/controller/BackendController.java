@@ -125,7 +125,10 @@ public class BackendController {
         model.addAttribute("rep", repairService.fetchAllRepair());
         return "repair";
     }
-
+    @GetMapping("/newrepair")
+    public String showNewRepair(){
+        return "newrepair";
+    }
     @PostMapping("newrepair")
     public String newRepair(@ModelAttribute Repair repair){
         repairService.addRepair(repair);
