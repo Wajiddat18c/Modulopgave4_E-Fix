@@ -30,7 +30,7 @@ public class RepairRepo {
     }
 
     public void deleteRepair(int id){
-        String sql = "DELETE FROM repair WHERE idRepair=id";
+        String sql = "DELETE FROM repair WHERE idRepair="+id;
 
         template.update(sql);
     }

@@ -46,4 +46,8 @@ public class FrontendController {
         return "addnyhed";
     }
 
+    @GetMapping("/newrepair")
+    public String addNewRepair(){
+        return "newrepair";
+    }
 }

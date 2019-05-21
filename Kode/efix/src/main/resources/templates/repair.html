@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/main :: head">
+    <meta charset="UTF-8">
+    <title>Repair</title>
+</head>
+<body>
+<nav th:replace="fragments/main :: nav" />
+<h1>Vis alle Repair Ordere</h1>
+
+<p th:each="repair : ${rep}">
+    <a th:href="@{'/admin/deleteordre/'+${repair.idRepair}}" >Slet Ordre</a>
+    Description: <span th:text="${repair.description}"/>
+    model: <span th:text="${repair.model}"/>
+    serial_number: <span th:text="${repair.serial_number}"/>
+    system_version: <span th:text="${repair.system_version}"/>
+    password: <span th:text="${repair.password}"/>
+    first_name: <span th:text="${repair.first_name}"/>
+    last_name: <span th:text="${repair.last_name}"/>
+    phonenr: <span th:text="${repair.phone}"/>
+    email: <span th:text="${repair.email}"/>
+</p>
+
+</body>
+</html>

@@ -3,9 +3,11 @@ package dat18c.modulopgave.efix.controller;
 import dat18c.modulopgave.efix.model.Butik;
 import dat18c.modulopgave.efix.model.Nyhedsbrev;
 import dat18c.modulopgave.efix.model.Produkter;
+import dat18c.modulopgave.efix.model.Repair;
 import dat18c.modulopgave.efix.service.ButikService;
 import dat18c.modulopgave.efix.service.NyhedsbrevService;
 import dat18c.modulopgave.efix.service.ProdukterService;
+import dat18c.modulopgave.efix.service.RepairService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,9 @@ public class BackendController {
 
     @Autowired
     NyhedsbrevService nyhedsbrevService;
+
+    @Autowired
+    RepairService repairService;
 
     @GetMapping("/")
     public String home(){
@@ -113,6 +118,23 @@ public class BackendController {
     public String unsubscribe(@PathVariable int id){
         nyhedsbrevService.deleteNyhedsbrev(id);
         return "redirect:/admin/nyhed";
+    }
+
+    @GetMapping("/repair")
+    public String repairData(Model model){
+        model.addAttribute("rep", repairService.fetchAllRepair());
+        return "repair";
+    }
+
+    @PostMapping("newrepair")
+    public String newRepair(@ModelAttribute Repair repair){
+        repairService.addRepair(repair);
+        return "redirect:/";
+    }
+    @GetMapping("deleteordre/{id}")
+    public String deleteOrdre(@PathVariable int id){
+        repairService.deleteRepair(id);
+        return "redirect:/admin/repair";
     }
 
 }
