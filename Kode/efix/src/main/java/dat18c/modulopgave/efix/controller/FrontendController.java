@@ -26,10 +26,6 @@ public class FrontendController {
         return "index";
     }
 
-    @GetMapping("/reparation")
-    public String reparation(Model model){
-        return "reparation";
-    }
 
     @GetMapping("/buy")
     public String buy(Model model){
