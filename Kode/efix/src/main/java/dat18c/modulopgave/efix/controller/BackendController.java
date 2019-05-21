@@ -107,7 +107,7 @@ public class BackendController {
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
         nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
-        return "redirect:/admin/nyhed";
+        return "redirect:/";
     }
     @GetMapping("deletenyhed/{id}")
     public String unsubscribe(@PathVariable int id){
