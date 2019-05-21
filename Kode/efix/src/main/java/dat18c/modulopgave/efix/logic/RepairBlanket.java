@@ -1,7 +1,7 @@
 package dat18c.modulopgave.efix.logic;
 import java.util.ArrayList;
 import java.util.Scanner;
-public class RepairCalculator {
+public class RepairBlanket {
 
     public static void main(String[] args) {
         repair();
