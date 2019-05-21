@@ -4,16 +4,41 @@
 </head>
 <body>
 <nav th:replace="fragments/frontend :: nav" />
+</p>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h2 style="text-align:right">
+            <h2>
                 <a
                         href="/admin/">
                     Admin login
                 </a>
+
             </h2>
         </div>
+    </div>
+    <div style="text-align: center">
+        <h2>Dette er Info omkring butikken.</h2>
+
+        <p th:each="butik : ${butikker}">
+            <span th:text="${butik.navn}"/>
+        </p>
+        <p th:each="butik : ${butikker}">
+            Adresse:
+            <span th:text="${butik.adresse}"/>
+        </p>
+        <p th:each="butik : ${butikker}">
+            <span th:text="${butik.mobilNummer}"/>
+        </p>
+        <p th:each="butik : ${butikker}">
+            <span th:text="${butik.beskrivelse}"/>
+        </p>
+        <p th:each="butik : ${butikker}">
+            <span th:text="${butik.aabningstider}"/>
+        </p>
+        <p th:each="butik : ${butikker}">
+            <span th:text="${butik.email}"/>
+        </p>
     </div>
 </div>
 </body>
