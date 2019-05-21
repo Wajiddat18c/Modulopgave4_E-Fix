@@ -30,7 +30,7 @@ public class NyhedsbrevRepo {
     }
 
     public void deleteNyhedsbrev(int id){
-        String sql = "DELETE FROM nyhedsbrev WHERE idNyhedsbrev="+id;
+        String sql = "DELETE FROM nyhedsbrev WHERE idNyhedsbrev=id";
 
         template.update(sql);
     }
