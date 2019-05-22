@@ -10,16 +10,19 @@
 
 <p th:each="repair : ${rep}">
     <a th:href="@{'/admin/deleteordre/'+${repair.idRepair}}" >Slet Ordre</a>
-    Description: <span th:text="${repair.description}"/>
-    model: <span th:text="${repair.model}"/>
-    serial_number: <span th:text="${repair.serial_number}"/>
-    system_version: <span th:text="${repair.system_version}"/>
-    password: <span th:text="${repair.password}"/>
-    first_name: <span th:text="${repair.first_name}"/>
-    last_name: <span th:text="${repair.last_name}"/>
-    phonenr: <span th:text="${repair.phone}"/>
-    email: <span th:text="${repair.email}"/>
+    Ordre Nummer: <span th:text="${repair.idRepair}"/>
+    <!--Description: <span th:text="${repair.description}"/>-->
+    <!--model: <span th:text="${repair.model}"/>-->
+    <!--serial_number: <span th:text="${repair.serial_number}"/>-->
+    <!--system_version: <span th:text="${repair.system_version}"/>-->
+    <!--password: <span th:text="${repair.password}"/>-->
+    <!--first_name: <span th:text="${repair.first_name}"/>-->
+    <!--last_name: <span th:text="${repair.last_name}"/>-->
+    <!--phonenr: <span th:text="${repair.phone}"/>-->
+    <!--email: <span th:text="${repair.email}"/>-->
+    <a style="color:blueviolet;" th:href="@{'/admin/updaterepair/' + ${repair.idRepair}}">Se og Opdater</a>
 </p>
 <a href="/admin/newrepair">Opret nyt ordre</a>
+
 </body>
 </html>

@@ -23,4 +23,10 @@ public class RepairService {
     public void deleteRepair(int id){
         repairRepo.deleteRepair(id);
     }
+    public Repair findRepairById(int id){
+        return repairRepo.findRepairById(id);
+    }
+    public void updateRepair(Repair repair){
+        repairRepo.updateRepair(repair);
+    }
 }

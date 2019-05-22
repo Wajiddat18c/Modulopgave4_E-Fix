@@ -140,4 +140,18 @@ public class BackendController {
         return "redirect:/admin/repair";
     }
 
+    @GetMapping("/updaterepair/{id}")
+    public String updateRepair(@PathVariable("id") int id, Model model){
+        model.addAttribute("rep", repairService.findRepairById(id));
+        return "updaterepair";
+    }
+
+
+    @PostMapping("/updaterepair")
+    public String updateRepair(@ModelAttribute Repair repair){
+        repairService.updateRepair(repair);
+        return "redirect:/admin/repair";
+    }
+
+
 }

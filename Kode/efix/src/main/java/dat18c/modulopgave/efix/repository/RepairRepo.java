@@ -35,4 +35,20 @@ public class RepairRepo {
         template.update(sql);
     }
 
+    public Repair findRepairById(int id){
+
+        String sql = "SELECT * FROM repair WHERE idRepair=?";
+
+        RowMapper<Repair> rowMapper = new BeanPropertyRowMapper<>(Repair.class);
+
+        return template.queryForObject(sql, rowMapper, id);
+    }
+
+    public void updateRepair(Repair repair){
+
+        String sql ="UPDATE repair SET description=?, model=?, serial_number=?, system_version=?, password=?, first_name=?, last_name=?, phone=?, email=? WHERE IdRepair=?";
+
+        template.update(sql, repair.getDescription(), repair.getModel(), repair.getSerial_number(),repair.getSystem_version(), repair.getPassword(), repair.getFirst_name(), repair.getLast_name(), repair.getPhone(), repair.getEmail(), repair.getIdRepair());
+    }
+
 }
