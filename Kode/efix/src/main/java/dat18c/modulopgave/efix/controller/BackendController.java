@@ -1,13 +1,7 @@
 package dat18c.modulopgave.efix.controller;
 
-import dat18c.modulopgave.efix.model.Butik;
-import dat18c.modulopgave.efix.model.Nyhedsbrev;
-import dat18c.modulopgave.efix.model.Produkter;
-import dat18c.modulopgave.efix.model.Repair;
-import dat18c.modulopgave.efix.service.ButikService;
-import dat18c.modulopgave.efix.service.NyhedsbrevService;
-import dat18c.modulopgave.efix.service.ProdukterService;
-import dat18c.modulopgave.efix.service.RepairService;
+import dat18c.modulopgave.efix.model.*;
+import dat18c.modulopgave.efix.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,6 +22,9 @@ public class BackendController {
 
     @Autowired
     RepairService repairService;
+
+    @Autowired
+    ReparationspriserService reparationspriserService;
 
     @GetMapping("/")
     public String home(){
@@ -151,6 +148,41 @@ public class BackendController {
     public String updateRepair(@ModelAttribute Repair repair){
         repairService.updateRepair(repair);
         return "redirect:/admin/repair";
+    }
+
+    @GetMapping ("/reparationspriser")
+    public String reprationspriserData(Model model){
+        model.addAttribute("pris", reparationspriserService.fetchAllReparationspriser());
+        return "reparationspriser";
+    }
+
+    @GetMapping("/addreparationspriser")
+    public String Showreparationspriser(){
+        return "addreparationspriser";
+    }
+    @PostMapping("/addreparationspriser")
+    public String createpriser(@ModelAttribute Reparationspriser reparationspriser){
+        reparationspriserService.addReparationspriser(reparationspriser);
+        return "redirect:/admin/reparationspriser";
+    }
+
+
+    @GetMapping("/deletereparationspriser/{id}")
+    public String deletereparationspriser(@PathVariable("id") int id){
+        reparationspriserService.deleteReparationspriser(id);
+        return "redirect:/admin/reparationspriser";
+    }
+
+    @GetMapping("/updatereparationspriser/{id}")
+    public String updatepriser(@PathVariable("id") int id, Model model){
+        model.addAttribute("pris", reparationspriserService.findReparationspriserById(id));
+        return "updatereparationspriser";
+
+    }
+    @PostMapping("/updatereparationspriser")
+    public String updatePriser(@ModelAttribute Reparationspriser reparationspriser){
+        reparationspriserService.updateReparationspriser(reparationspriser);
+        return "redirect:/admin/reparationspriser";
     }
 
 

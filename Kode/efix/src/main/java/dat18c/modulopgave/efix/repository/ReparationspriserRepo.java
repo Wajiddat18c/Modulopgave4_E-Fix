@@ -44,7 +44,7 @@ public class ReparationspriserRepo {
 
     public void updateReparationspriser(Reparationspriser reparationspriser){
         String sql = "UPDATE REPARATIONSPRISER SET brand=?, model=?, tid=?, beskrivelse=?, pris=? WHERE idReparationspriser=?";
-        template.update(sql, reparationspriser.getBrand(), reparationspriser.getModel(), reparationspriser.getTid(), reparationspriser.getBeskrivelse(), reparationspriser.getPris());
+        template.update(sql, reparationspriser.getBrand(), reparationspriser.getModel(), reparationspriser.getTid(), reparationspriser.getBeskrivelse(), reparationspriser.getPris(), reparationspriser.getIdReparationspriser());
     }
 
 }

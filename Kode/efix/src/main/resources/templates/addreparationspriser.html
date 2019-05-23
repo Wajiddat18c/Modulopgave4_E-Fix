@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/main :: head">
+</head>
+<body>
+<nav th:replace="fragments/main :: nav" />
+<div class="container">
+    <h1>Opret en ny reparation</h1>
+
+    <form action="/admin/addreparationspriser" method="post">
+        <div class="form-group">
+            <input type="text" name="brand" class="form-control" placeholder="Skriv produktets brand">
+        </div>
+        <div class="form-group">
+            <input type="text" name="model" class="form-control" placeholder="Skriv produktets model">
+        </div>
+        <div class="form-group">
+            <input type="text" name="tid" class="form-control" placeholder="Skriv reparations varighed">
+        </div>
+        <div class="form-group">
+            <input type="text" name="beskrivelse" class="form-control" placeholder="Skriv beskrivelse">
+        </div>
+        <div class="form-group">
+            <input type="text" name="pris" class="form-control" placeholder="Skriv reparationspriser" required pattern="^[0-9]*$">
+        </div>
+        <button type="submit" class="btn btn-primary">Opret</button>
+    </form>
+</div>
+</body>
+</html>

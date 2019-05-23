@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/main :: head">
+</head>
+<body>
+<nav th:replace="fragments/main :: nav" />
+
+<h1>Visning af reparationspriser</h1>
+
+<p th:each="reparationspriser : ${pris}">
+    <a style="color:blueviolet;" th:href="@{'/admin/updatereparationspriser/' + ${reparationspriser.idReparationspriser}}">Opdater</a>
+    <span th:text="${reparationspriser.brand}"/>
+    <span th:text="${reparationspriser.model}"/>
+    <span th:text="${reparationspriser.tid}"/>
+    <span th:text="${reparationspriser.beskrivelse}"/>
+    <span th:text="${reparationspriser.pris}"/>
+    <a style="color:red;" th:href="@{'/admin/deletereparationspriser/' + ${reparationspriser.idReparationspriser}}">Slet</a>
+</p>
+<a href="/admin/addreparationspriser">Opret en reparation</a>
+</body>
+</html>
