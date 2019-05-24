@@ -80,4 +80,13 @@ public class FrontendController {
         model.addAttribute("images", images);
         return "Buyphone";
     }
+    @GetMapping("/Buypc")
+    public String index1(Model model){
+        List<Images> images = new ArrayList<>();
+//        images.add(new Images(1, "Iphonex", 100, 90));
+
+        model.addAttribute("images", images);
+        return "Buypc";
+    }
+
 }
