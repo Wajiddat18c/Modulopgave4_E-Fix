@@ -63,7 +63,7 @@ public class FrontendController {
         List<Images> images = new ArrayList<>();
         images.add(new Images(1, "Iphonex", 100, 90));
         images.add(new Images(2, "S9", 90, 500));
-        images.add(new Images(2, "Huawei", 90, 900));
+        images.add(new Images(3, "Huawei", 90, 900));
         model.addAttribute("images", images);
         return "Buyphone";
     }
