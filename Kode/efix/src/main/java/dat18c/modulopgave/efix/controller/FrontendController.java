@@ -26,7 +26,7 @@ public class FrontendController {
     @GetMapping("/")
     public String frontPage(Model model){
 
-        model.addAttribute("butikker", butikService.fetchAllButiks());
+        model.addAttribute("butikker", butikService.fetchAll());
         return "index";
     }
 

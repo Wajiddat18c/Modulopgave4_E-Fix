@@ -34,7 +34,7 @@ public class BackendController {
     @GetMapping("/butik")
     public String butikData(Model model){
 
-        model.addAttribute("butikker", butikService.fetchAllButiks());
+        model.addAttribute("butikker", butikService.fetchAll());
 
         return "butik";
     }
@@ -43,7 +43,7 @@ public class BackendController {
     @GetMapping("/update/{idButik}")
     public String showUpdate(@PathVariable("idButik") int idButik, Model model){
         //tilføj person med id til viewmodel
-        model.addAttribute("butikker", butikService.findButikById(idButik));
+        model.addAttribute("butikker", butikService.findById(idButik));
         return "update";
     }
 
@@ -51,7 +51,7 @@ public class BackendController {
     @PostMapping("/update")
     public String updateDoIt(@ModelAttribute Butik butik){
         //kald update service
-        butikService.updateButik(butik);
+        butikService.update(butik);
         //sikr mod refresh fejl og sletter igen
         return "redirect:/admin/butik";
     }

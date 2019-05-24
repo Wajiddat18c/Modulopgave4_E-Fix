@@ -1,5 +1,6 @@
 package dat18c.modulopgave.efix.repository;
 
+import dat18c.modulopgave.efix.Crud;
 import dat18c.modulopgave.efix.model.Butik;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -10,12 +11,13 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ButikRepo {
+public class ButikRepo implements Crud<Butik> {
 
     @Autowired
     JdbcTemplate template;
 
-    public List<Butik> fetchAllButik(){
+    @Override
+    public List<Butik> fetchAll(){
 
         String sql = "SELECT * FROM BUTIK";
 
@@ -23,8 +25,8 @@ public class ButikRepo {
 
         return template.query(sql, rowMapper);
     }
-
-    public Butik findButikById(int idButik){
+    @Override
+    public Butik findById(int idButik){
         //sql query der finder butik vha. id
         String sql ="SELECT * FROM BUTIK WHERE idButik=?";
         //instantier rowmapper til at mappe query result til butik object
@@ -33,7 +35,17 @@ public class ButikRepo {
         return template.queryForObject(sql, rowMapper, idButik);
     }
 
-    public void updateButik(Butik butik){
+    @Override
+    public void addItem(Butik butik) {
+
+    }
+
+    @Override
+    public void deleteById(int id) {
+
+    }
+    @Override
+    public void update(Butik butik){
         //sql statement der opdaterer rækken id med butik objektet
         String sql ="UPDATE butik SET navn=?, adresse=?, mobilNummer=?, beskrivelse=?, aabningstider=?, email=? WHERE idButik=?";
         //udfør update med JdbcTemplate
