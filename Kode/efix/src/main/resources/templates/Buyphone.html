@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/frontend :: head">
+
+    <style>
+        img{
+            width: 20px;
+
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav th:replace="fragments/frontend :: nav" />
+
+<span th:each="image:${images}">
+
+    <img th:src="@{'/img/' + ${image.name} + '.jpg'}" th:style="${'position:absolute; TOP:' + image.top +'px; LEFT:' + image.left + 'px;'}"  />
+
+</span>
+
+</body>
+</html>
