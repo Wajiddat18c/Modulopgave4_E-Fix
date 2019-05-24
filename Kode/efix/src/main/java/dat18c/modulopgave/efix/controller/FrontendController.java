@@ -42,6 +42,19 @@ public class FrontendController {
         return "addnyhed";
     }
 
+    @PostMapping("/addnyhed")
+    public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
+        if(nyhedsbrev.isAcceptPP() && nyhedsbrev.geteMail().matches("[^@]+@[^@]+\\.[a-zA-Z]{2,6}")){
+            nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
+            return "redirect:/";
+        }
+        else{
+            return "addnyhed";
+        }
+    }
+    @GetMapping("/privatliv")
+    public String privatlivsPolitik(){return "privatliv/english";}
+
     @GetMapping("/newrepair")
     public String addNewRepair(){
         return "newrepair";

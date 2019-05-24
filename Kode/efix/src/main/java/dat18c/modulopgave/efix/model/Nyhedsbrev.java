@@ -10,6 +10,22 @@ public class Nyhedsbrev {
     private int idNyhedsbrev;
     private String eMail;
 
+    public boolean isAcceptPP() {
+        return acceptPP;
+    }
+
+    public void setAcceptPP(boolean acceptPP) {
+        this.acceptPP = acceptPP;
+    }
+
+    public Nyhedsbrev(int idNyhedsbrev, String eMail, boolean acceptPP) {
+        this.idNyhedsbrev = idNyhedsbrev;
+        this.eMail = eMail;
+        this.acceptPP = acceptPP;
+    }
+
+    private boolean acceptPP;
+
     public Nyhedsbrev() {
     }
 

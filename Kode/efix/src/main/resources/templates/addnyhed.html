@@ -7,14 +7,20 @@
 <nav th:replace="fragments/frontend :: nav" />
 <div class="container">
 <h1>Tilmeld til nyhedsbrev</h1>
-
-<form action="/admin/addnyhed" method="post">
+<div class="col-md-6">
+<form action="/addnyhed" method="post">
     <div class="form-group">
         <input type="email" name="eMail" class="form-control" placeholder="Skriv din Email her!" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}">
     </div>
-
-    <button type="submit" class="btn btn-primary">Tilmeldt</button>
+    <div class="form-group">
+        <label class="form-check-label" for="gridCheck1">
+            Jeg accepterer nyhedsbrevets <a href="/privatliv/" target="_blank">privatlivspolitik</a>:
+        </label>
+        <input required name="acceptPP" type="checkbox" id="gridCheck1">
+    </div>
+    <button type="submit" class="btn btn-primary">Tilmeld</button>
 </form>
+</div>
 </div>
 </body>
 </html>

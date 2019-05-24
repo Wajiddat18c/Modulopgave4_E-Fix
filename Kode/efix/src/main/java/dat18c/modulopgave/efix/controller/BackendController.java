@@ -26,7 +26,7 @@ public class BackendController {
     @Autowired
     ReparationspriserService reparationspriserService;
 
-    @GetMapping("/")
+    @RequestMapping("/")
     public String home(){
         return "adminindex";
     }
@@ -109,7 +109,7 @@ public class BackendController {
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
         nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
-        return "redirect:/";
+        return "redirect:/nyhed";
     }
     @GetMapping("deletenyhed/{id}")
     public String unsubscribe(@PathVariable int id){
