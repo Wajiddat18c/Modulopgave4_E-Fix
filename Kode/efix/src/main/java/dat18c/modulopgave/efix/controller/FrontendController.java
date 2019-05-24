@@ -49,7 +49,7 @@ public class FrontendController {
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
         if(nyhedsbrev.isAcceptPP() && nyhedsbrev.geteMail().matches("[^@]+@[^@]+\\.[a-zA-Z]{2,6}")){
-            nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
+            nyhedsbrevService.addItem(nyhedsbrev);
             return "redirect:/";
         }
         else{

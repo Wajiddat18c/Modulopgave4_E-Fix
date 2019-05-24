@@ -59,7 +59,7 @@ public class BackendController {
     @GetMapping("/prod")
     public String produkterData(Model model){
 
-        model.addAttribute("produkt", produkterService.fetchAllProdukters());
+        model.addAttribute("produkt", produkterService.fetchAll());
 
         return "prod";
     }
@@ -71,33 +71,33 @@ public class BackendController {
 
     @PostMapping("/create")
     public String create(@ModelAttribute Produkter produkter){
-        produkterService.addProdukter(produkter);
+        produkterService.addItem(produkter);
         return "redirect:/admin/prod";
     }
 
     @GetMapping("/delete/{iden}")
     public String delete(@PathVariable("iden") int idProdukter){
-        produkterService.deleteProdukter(idProdukter);
+        produkterService.deleteById(idProdukter);
         return "redirect:/admin/prod";
     }
 
     @GetMapping("/updateprod/{id}")
     public String Update(@PathVariable("id") int idProdukter, Model model){
-        model.addAttribute("produkt", produkterService.findProdukterById(idProdukter));
+        model.addAttribute("produkt", produkterService.findById(idProdukter));
         return "updateprod";
     }
 
     // opdater person - @ModelAttribute bruges til at få fat i person fra post
     @PostMapping("/updateprod")
     public String updateIt(@ModelAttribute Produkter produkter){
-        produkterService.updateProdukter(produkter);
+        produkterService.update(produkter);
         return "redirect:/admin/prod";
     }
 
     @GetMapping("/nyhed")
     public String nyhedsbrevData(Model model){
 
-        model.addAttribute("nyhed", nyhedsbrevService.fetchAllNyhedsbrev());
+        model.addAttribute("nyhed", nyhedsbrevService.fetchAll());
 
         return "nyhed";
     }
@@ -108,18 +108,18 @@ public class BackendController {
 
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
-        nyhedsbrevService.addNyhedsbrev(nyhedsbrev);
+        nyhedsbrevService.addItem(nyhedsbrev);
         return "redirect:/nyhed";
     }
     @GetMapping("deletenyhed/{id}")
     public String unsubscribe(@PathVariable int id){
-        nyhedsbrevService.deleteNyhedsbrev(id);
+        nyhedsbrevService.deleteById(id);
         return "redirect:/admin/nyhed";
     }
 
     @GetMapping("/repair")
     public String repairData(Model model){
-        model.addAttribute("rep", repairService.fetchAllRepair());
+        model.addAttribute("rep", repairService.fetchAll());
         return "repair";
     }
     @GetMapping("/newrepair")
@@ -128,31 +128,31 @@ public class BackendController {
     }
     @PostMapping("newrepair")
     public String newRepair(@ModelAttribute Repair repair){
-        repairService.addRepair(repair);
+        repairService.addItem(repair);
         return "redirect:/";
     }
     @GetMapping("deleteordre/{id}")
     public String deleteOrdre(@PathVariable int id){
-        repairService.deleteRepair(id);
+        repairService.deleteById(id);
         return "redirect:/admin/repair";
     }
 
     @GetMapping("/updaterepair/{id}")
     public String updateRepair(@PathVariable("id") int id, Model model){
-        model.addAttribute("rep", repairService.findRepairById(id));
+        model.addAttribute("rep", repairService.findById(id));
         return "updaterepair";
     }
 
 
     @PostMapping("/updaterepair")
     public String updateRepair(@ModelAttribute Repair repair){
-        repairService.updateRepair(repair);
+        repairService.update(repair);
         return "redirect:/admin/repair";
     }
 
     @GetMapping ("/reparationspriser")
     public String reprationspriserData(Model model){
-        model.addAttribute("pris", reparationspriserService.fetchAllReparationspriser());
+        model.addAttribute("pris", reparationspriserService.fetchAll());
         return "reparationspriser";
     }
 
@@ -162,26 +162,26 @@ public class BackendController {
     }
     @PostMapping("/addreparationspriser")
     public String createpriser(@ModelAttribute Reparationspriser reparationspriser){
-        reparationspriserService.addReparationspriser(reparationspriser);
+        reparationspriserService.addItem(reparationspriser);
         return "redirect:/admin/reparationspriser";
     }
 
 
     @GetMapping("/deletereparationspriser/{id}")
     public String deletereparationspriser(@PathVariable("id") int id){
-        reparationspriserService.deleteReparationspriser(id);
+        reparationspriserService.deleteById(id);
         return "redirect:/admin/reparationspriser";
     }
 
     @GetMapping("/updatereparationspriser/{id}")
     public String updatepriser(@PathVariable("id") int id, Model model){
-        model.addAttribute("pris", reparationspriserService.findReparationspriserById(id));
+        model.addAttribute("pris", reparationspriserService.findById(id));
         return "updatereparationspriser";
 
     }
     @PostMapping("/updatereparationspriser")
     public String updatePriser(@ModelAttribute Reparationspriser reparationspriser){
-        reparationspriserService.updateReparationspriser(reparationspriser);
+        reparationspriserService.update(reparationspriser);
         return "redirect:/admin/reparationspriser";
     }
 

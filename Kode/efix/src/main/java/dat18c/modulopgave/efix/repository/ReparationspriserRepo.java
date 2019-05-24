@@ -1,5 +1,6 @@
 package dat18c.modulopgave.efix.repository;
 
+import dat18c.modulopgave.efix.Crud;
 import dat18c.modulopgave.efix.model.Produkter;
 import dat18c.modulopgave.efix.model.Reparationspriser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,38 +12,39 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public class ReparationspriserRepo {
+public class ReparationspriserRepo implements Crud<Reparationspriser>{
 
     @Autowired
     JdbcTemplate template;
 
-    public List<Reparationspriser> fetchAllReparationspriser() {
+    @Override
+    public List<Reparationspriser> fetchAll() {
         String sql = "SELECT * FROM REPARATIONSPRISER";
         RowMapper<Reparationspriser> rowMapper = new BeanPropertyRowMapper<>(Reparationspriser.class);
 
         return template.query(sql, rowMapper);
     }
-
-    public Reparationspriser findReparationspriser(int id) {
+    @Override
+    public Reparationspriser findById(int id) {
         String sql = "SELECT * FROM REPARATIONSPRISER WHERE idReparationspriser=?";
 
         RowMapper<Reparationspriser> rowMapper = new BeanPropertyRowMapper<>(Reparationspriser.class);
         return template.queryForObject(sql, rowMapper, id);
     }
-
-    public void addReparationspriser(Reparationspriser reparationspriser) {
+    @Override
+    public void addItem(Reparationspriser reparationspriser) {
         String sql = "INSERT INTO REPARATIONSPRISER(idReparationspriser, brand, model, tid, beskrivelse, pris) VALUES (?,?,?,?,?,?)";
 
         template.update(sql, reparationspriser.getIdReparationspriser(), reparationspriser.getBrand(), reparationspriser.getModel(), reparationspriser.getTid(), reparationspriser.getBeskrivelse(), reparationspriser.getPris());
 
     }
-
-    public void deleteReparationspriser(int id){
+    @Override
+    public void deleteById(int id){
         String sql = "DELETE FROM REPARATIONSPRISER WHERE idReparationspriser="+id;
         template.update(sql);
     }
-
-    public void updateReparationspriser(Reparationspriser reparationspriser){
+    @Override
+    public void update(Reparationspriser reparationspriser){
         String sql = "UPDATE REPARATIONSPRISER SET brand=?, model=?, tid=?, beskrivelse=?, pris=? WHERE idReparationspriser=?";
         template.update(sql, reparationspriser.getBrand(), reparationspriser.getModel(), reparationspriser.getTid(), reparationspriser.getBeskrivelse(), reparationspriser.getPris(), reparationspriser.getIdReparationspriser());
     }

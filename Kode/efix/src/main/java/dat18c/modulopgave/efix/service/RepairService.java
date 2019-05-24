@@ -1,32 +1,38 @@
 package dat18c.modulopgave.efix.service;
 
+import dat18c.modulopgave.efix.Crud;
 import dat18c.modulopgave.efix.model.Repair;
 import dat18c.modulopgave.efix.repository.RepairRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
 @Service
-public class RepairService {
+public class RepairService implements Crud<Repair>{
 
     @Autowired
     RepairRepo repairRepo;
-    public List<Repair> fetchAllRepair(){
-        return repairRepo.fetchAllRepair();
+    @Override
+    public List<Repair> fetchAll(){
+        return repairRepo.fetchAll();
+    }
+    @Override
+    public void addItem(Repair repair){
+        repairRepo.addItem(repair);
     }
 
-    public void addRepair(Repair repair){
-        repairRepo.addRepair(repair);
+    @Override
+    public void deleteById(int id){
+        repairRepo.deleteById(id);
     }
-
-    public void deleteRepair(int id){
-        repairRepo.deleteRepair(id);
+    @Override
+    public Repair findById(int id){
+        return repairRepo.findById(id);
     }
-    public Repair findRepairById(int id){
-        return repairRepo.findRepairById(id);
-    }
-    public void updateRepair(Repair repair){
-        repairRepo.updateRepair(repair);
+    @Override
+    public void update(Repair repair){
+        repairRepo.update(repair);
     }
 }

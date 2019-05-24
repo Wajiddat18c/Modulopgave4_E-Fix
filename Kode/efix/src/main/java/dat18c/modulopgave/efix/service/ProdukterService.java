@@ -1,5 +1,6 @@
 package dat18c.modulopgave.efix.service;
 
+import dat18c.modulopgave.efix.Crud;
 import dat18c.modulopgave.efix.model.Produkter;
 import dat18c.modulopgave.efix.repository.ProdukterRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,28 +9,29 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ProdukterService {
+public class ProdukterService implements Crud<Produkter>{
 
     @Autowired
     ProdukterRepo produkterRepo;
 
-    public List<Produkter> fetchAllProdukters(){
-        return produkterRepo.fetchAllProdukter();
+    @Override
+    public List<Produkter> fetchAll(){
+        return produkterRepo.fetchAll();
     }
-
-    public Produkter findProdukterById(int idProdukter){
-        return produkterRepo.findProdukterById(idProdukter);
+    @Override
+    public Produkter findById(int idProdukter){
+        return produkterRepo.findById(idProdukter);
     }
-
-    public void addProdukter(Produkter produkter){
-        produkterRepo.addProdukter(produkter);
+    @Override
+    public void addItem(Produkter produkter){
+        produkterRepo.addItem(produkter);
     }
-
-    public void deleteProdukter(int idProdukter){
-        produkterRepo.deleteProdukter(idProdukter);
+    @Override
+    public void deleteById(int idProdukter){
+        produkterRepo.deleteById(idProdukter);
     }
-
-    public void updateProdukter(Produkter produkter){
-        produkterRepo.updateProdukter(produkter);
+    @Override
+    public void update(Produkter produkter){
+        produkterRepo.update(produkter);
     }
 }
