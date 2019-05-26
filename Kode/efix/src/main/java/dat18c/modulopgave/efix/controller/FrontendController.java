@@ -100,4 +100,17 @@ public class FrontendController {
         return "Buypc";
     }
 
+    @GetMapping("/Buyaccessories")
+    public String index2(Model model){
+        List<Images> images = new ArrayList<>();
+//        images.add(new Images(1, "Iphonex", 100, 90));
+
+        model.addAttribute("images", images);
+
+//        model.addAttribute("pro", produkterService.findById(20));
+//        model.addAttribute("air", produkterService.findById(21));
+//        model.addAttribute("imac", produkterService.findById(22));
+        return "Buyaccessories";
+    }
+
 }
