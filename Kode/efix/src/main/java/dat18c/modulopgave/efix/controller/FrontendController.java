@@ -80,7 +80,7 @@ public class FrontendController {
         List<Images> images = new ArrayList<>();
         images.add(new Images(1, "Iphonex", 100, 90));
         images.add(new Images(2, "S9", 90, 500));
-        images.add(new Images(3, "Huawei", 90, 900));
+        images.add(new Images(3, "Huawei", 90, 1000));
         model.addAttribute("images", images);
         model.addAttribute("iphone", produkterService.findById(17));
         model.addAttribute("samsung", produkterService.findById(18));
@@ -91,6 +91,10 @@ public class FrontendController {
     public String index1(Model model){
         List<Images> images = new ArrayList<>();
 //        images.add(new Images(1, "Iphonex", 100, 90));
+        images.add(new Images(4, "Macbookpro", 100, 90));
+        images.add(new Images(5, "air", 90, 500));
+        images.add(new Images(6, "Imac", 90, 1000));
+
 
         model.addAttribute("images", images);
 
@@ -103,6 +107,10 @@ public class FrontendController {
     @GetMapping("/Buyaccessories")
     public String index2(Model model){
         List<Images> images = new ArrayList<>();
+        images.add(new Images(7, "Appleearpods", 100, 90));
+        images.add(new Images(8, "Panzerglass", 90, 500));
+        images.add(new Images(9, "Biloplader", 90, 1000));
+
 //        images.add(new Images(1, "Iphonex", 100, 90));
 
         model.addAttribute("images", images);
