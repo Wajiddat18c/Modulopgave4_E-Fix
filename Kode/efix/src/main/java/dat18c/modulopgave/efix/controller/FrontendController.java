@@ -4,6 +4,7 @@ import dat18c.modulopgave.efix.model.Nyhedsbrev;
 import dat18c.modulopgave.efix.service.ButikService;
 
 import dat18c.modulopgave.efix.service.NyhedsbrevService;
+import dat18c.modulopgave.efix.service.ProdukterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,9 @@ public class FrontendController {
 
     @Autowired
     NyhedsbrevService nyhedsbrevService;
+
+    @Autowired
+    ProdukterService produkterService;
 
     @GetMapping("/")
     public String frontPage(Model model){
@@ -78,6 +82,9 @@ public class FrontendController {
         images.add(new Images(2, "S9", 90, 500));
         images.add(new Images(3, "Huawei", 90, 900));
         model.addAttribute("images", images);
+        model.addAttribute("iphone", produkterService.findById(17));
+        model.addAttribute("samsung", produkterService.findById(18));
+        model.addAttribute("huawei", produkterService.findById(19));
         return "Buyphone";
     }
     @GetMapping("/Buypc")
