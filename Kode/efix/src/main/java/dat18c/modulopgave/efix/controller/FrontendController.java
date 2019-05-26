@@ -1,4 +1,5 @@
 package dat18c.modulopgave.efix.controller;
+import dat18c.modulopgave.efix.model.Calculator;
 import dat18c.modulopgave.efix.model.Images;
 import dat18c.modulopgave.efix.model.Nyhedsbrev;
 import dat18c.modulopgave.efix.service.ButikService;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 @Controller
@@ -44,6 +46,97 @@ public class FrontendController {
     public String sell(Model model){
         return "sell";
     }
+    @PostMapping("udregn")
+    public String udregn(@ModelAttribute Calculator calculator, Model model){
+
+        HashMap<String, Integer> phone = new HashMap<>();
+        phone.put("Iphone X", 6000);
+        phone.put("Samsung S9", 5600);
+        phone.put("Huawei P20", 4000);
+        phone.put("Iphone 4", 1200);
+
+        int bad = 8;
+        int decent = 3;
+        double good = 1.5;
+
+
+        int tal = calculator.getTal();
+        int pick = calculator.getPick();
+
+
+        switch (tal) {
+            case 1:
+                if (pick == 1) {
+                    int a = phone.get("Iphone X") / bad;
+                    model.addAttribute("result", a);
+                } else if (pick == 2) {
+                    int a = phone.get("Iphone X") / decent;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 3) {
+                    int a = (int) (phone.get("Iphone X") / good);
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                }
+
+                break;
+            case 2:
+                if (pick == 1) {
+                    int a = phone.get("Samsung S9") / bad;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 2) {
+                    int a = phone.get("Samsung S9") / decent;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 3) {
+                    int a = (int) (phone.get("Samsung S9") / good);
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                }
+
+                break;
+            case 3:
+                if (pick == 1) {
+                    int a = phone.get("Huawei P20") / bad;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 2) {
+                    int a = phone.get("Huawei P20") / decent;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 3) {
+                    int a = (int) (phone.get("Huawei P20") / good);
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                }
+
+                break;
+            case 4:
+                if (pick == 1) {
+                    int a = phone.get("Iphone 4") / bad;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 2) {
+                    int a = phone.get("Iphone 4") / decent;
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                } else if (pick == 3) {
+                    int a = (int) (phone.get("Iphone 4") / good);
+                    System.out.println("Buy value:" + a);
+                    model.addAttribute("result", a);
+                }
+
+                break;
+            default:
+                System.out.println("Wrong input!");
+                System.out.println(tal + " + " + pick);
+                break;
+        }
+        return "calculator";
+    }
+
+
 
     @GetMapping("/addnyhed")
     public String showAddNyhed(){

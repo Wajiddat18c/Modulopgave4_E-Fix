@@ -7,5 +7,28 @@
 <body>
 <nav th:replace="fragments/frontend :: nav" />
 
+<form action="/udregn" method="post">
+
+
+    <div>
+        Vælg din Mobil: <select name="tal">
+        <option value="1">Iphone X</option>
+        <option value="2">Samsung S9</option>
+        <option value="3">Huawei p20</option>
+        <option value="4">Iphone 4</option>
+    </select>
+    </div>
+    <div>
+        Vælg din Condition: <select name="pick">
+        <option value="1">Dårlig</option>
+        <option value="2">Let brugt</option>
+        <option value="3">Ny</option>
+    </select>
+    </div>
+    <button class="btn btn-danger">
+        <span class="spinner-border spinner-border-sm"></span>
+        send data
+    </button>
+
 </body>
 </html>
