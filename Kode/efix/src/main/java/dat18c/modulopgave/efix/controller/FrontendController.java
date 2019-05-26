@@ -107,9 +107,9 @@ public class FrontendController {
 
         model.addAttribute("images", images);
 
-//        model.addAttribute("pro", produkterService.findById(20));
-//        model.addAttribute("air", produkterService.findById(21));
-//        model.addAttribute("imac", produkterService.findById(22));
+        model.addAttribute("earpods", produkterService.findById(23));
+        model.addAttribute("panserglas", produkterService.findById(24));
+        model.addAttribute("biloplader", produkterService.findById(25));
         return "Buyaccessories";
     }
 
