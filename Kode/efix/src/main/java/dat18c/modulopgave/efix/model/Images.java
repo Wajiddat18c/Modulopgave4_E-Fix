@@ -1,5 +1,7 @@
 package dat18c.modulopgave.efix.model;
-
+/** This class defines data structure.
+ *
+ */
 public class Images {
     int id;
     String name;

@@ -8,6 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/** This class implements Crud Interface
+ *
+ */
 @Service
 public class ButikService implements Crud<Butik> {
 

@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-
+/** This class implements Crud Interface
+ *
+ */
 @Service
 public class RepairService implements Crud<Repair>{
 

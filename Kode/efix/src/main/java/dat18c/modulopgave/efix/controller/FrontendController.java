@@ -32,6 +32,11 @@ public class FrontendController {
     @Autowired
     SearchService searchService;
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/")
     public String frontPage(Model model){
 
@@ -39,16 +44,32 @@ public class FrontendController {
         return "index";
     }
 
-
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/buy")
     public String buy(Model model){
         return "buy";
     }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/sell")
     public String sell(Model model){
         return "sell";
     }
+
+    /**
+     *
+     * @param calculator
+     * @param model
+     * @return
+     */
     @PostMapping("udregn")
     public String udregn(@ModelAttribute Calculator calculator, Model model){
 
@@ -149,12 +170,20 @@ public class FrontendController {
     }
 
 
-
+    /**
+     *
+     * @return
+     */
     @GetMapping("/addnyhed")
     public String showAddNyhed(){
         return "addnyhed";
     }
 
+    /**
+     *
+     * @param nyhedsbrev
+     * @return
+     */
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
         if(nyhedsbrev.isAcceptPP() && nyhedsbrev.geteMail().matches("[^@]+@[^@]+\\.[a-zA-Z]{2,6}")){
@@ -165,21 +194,38 @@ public class FrontendController {
             return "addnyhed";
         }
     }
+
+    /**
+     *
+     * @return
+     */
     @GetMapping("/privatliv")
     public String privatlivsPolitik(){return "privatliv/english";}
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("/newrepair")
     public String addNewRepair(){
         return "newrepair";
     }
 
+    /**
+     *
+     * @return
+     */
     @GetMapping("/faq")
     public String faq(){
         return "faq";
     }
 
 
-
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/Buyphone")
     public String index(Model model){
         List<Images> images = new ArrayList<>();
@@ -192,6 +238,12 @@ public class FrontendController {
         model.addAttribute("huawei", produkterService.findById(19));
         return "Buyphone";
     }
+
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/Buypc")
     public String index1(Model model){
         List<Images> images = new ArrayList<>();
@@ -209,6 +261,11 @@ public class FrontendController {
         return "Buypc";
     }
 
+    /**
+     *
+     * @param model
+     * @return
+     */
     @GetMapping("/Buyaccessories")
     public String index2(Model model){
         List<Images> images = new ArrayList<>();
@@ -225,6 +282,13 @@ public class FrontendController {
         model.addAttribute("biloplader", produkterService.findById(25));
         return "Buyaccessories";
     }
+
+    /**
+     *
+     * @param query
+     * @param model
+     * @return
+     */
     @GetMapping("/search")
     public String searchResults(@RequestParam("query") String query, Model model){
         model.addAttribute("Results", searchService.getResults(query));

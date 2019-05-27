@@ -1,7 +1,9 @@
 package dat18c.modulopgave.efix.model;
 
 import javax.persistence.Id;
-
+/** This class defines data structure.
+ *
+ */
 public class Kategori {
     @Id
     private int idKategori;

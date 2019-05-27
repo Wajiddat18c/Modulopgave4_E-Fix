@@ -9,7 +9,9 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+/** This is a Repository class that handles Sql quarries.
+ *
+ */
 @Repository
 public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
 
