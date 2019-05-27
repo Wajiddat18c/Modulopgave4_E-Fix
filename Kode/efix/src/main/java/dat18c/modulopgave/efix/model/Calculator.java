@@ -2,30 +2,30 @@ package dat18c.modulopgave.efix.model;
 
 public class Calculator {
 
-    private int tal;
-    private int pick;
+    private int pickPhone;
+    private int pickCondition;
 
     public Calculator() {
     }
 
-    public Calculator(int tal, int pick) {
-        this.tal = tal;
-        this.pick = pick;
+    public Calculator(int pickPhone, int pickCondition) {
+        this.pickPhone = pickPhone;
+        this.pickCondition = pickCondition;
     }
 
-    public int getTal() {
-        return tal;
+    public int getPickPhone() {
+        return pickPhone;
     }
 
-    public void setTal(int tal) {
-        this.tal = tal;
+    public void setPickPhone(int pickPhone) {
+        this.pickPhone = pickPhone;
     }
 
-    public int getPick() {
-        return pick;
+    public int getPickCondition() {
+        return pickCondition;
     }
 
-    public void setPick(int pick) {
-        this.pick = pick;
+    public void setPickCondition(int pickCondition) {
+        this.pickCondition = pickCondition;
     }
 }

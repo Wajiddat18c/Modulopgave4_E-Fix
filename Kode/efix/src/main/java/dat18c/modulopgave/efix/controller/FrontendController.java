@@ -64,8 +64,8 @@ public class FrontendController {
         phoneCondition.add(3); //[1] decent cond
         phoneCondition.add(2); //[2] good cond
 
-        int tal = calculator.getTal();
-        int pick = calculator.getPick();
+        int tal = calculator.getPickPhone();
+        int pick = calculator.getPickCondition();
 
 
         switch (tal) {
