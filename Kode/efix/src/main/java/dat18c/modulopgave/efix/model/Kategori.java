@@ -1,3 +1,6 @@
+/**
+ * dat18c.modulopgave.efix.model
+ */
 package dat18c.modulopgave.efix.model;
 
 import javax.persistence.Id;

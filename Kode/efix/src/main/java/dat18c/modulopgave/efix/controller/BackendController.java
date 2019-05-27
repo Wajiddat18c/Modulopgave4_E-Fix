@@ -1,3 +1,6 @@
+/**
+ * dat18c.modulopgave.efix.controller
+ */
 package dat18c.modulopgave.efix.controller;
 
 import dat18c.modulopgave.efix.model.*;
@@ -8,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+/**This a BackendController that handles logic
+ *
+ */
 @Controller
 @RequestMapping("/admin/")
 public class BackendController {
