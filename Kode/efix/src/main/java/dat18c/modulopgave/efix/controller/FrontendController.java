@@ -60,7 +60,7 @@ public class FrontendController {
         phoneCondition.add(2); //[0] good cond
         phoneCondition.add(3); //[1] decent cond
         phoneCondition.add(0); //[2] bad cond
-        
+
 
         int pickPhone = calculator.getPickPhone();
         int pickPower = calculator.getPickPower();
