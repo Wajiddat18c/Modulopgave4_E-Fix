@@ -7,7 +7,7 @@
 <div class="container">
 <h1>Opret en ny Produkt</h1>
 
-<form action="/admin/create" method="post">
+<form action="/admin/create" method="post" class="col-md-6">
     <div class="form-group">
         <input type="text" name="navn" class="form-control" placeholder="Skriv produktets navn">
     </div>
@@ -18,10 +18,8 @@
         <input type="text" name="beskrivelse" class="form-control" placeholder="Skriv en produktbeskrivelse">
     </div>
     <div class="kategoriliste">
-        <select name="Kategori_idKategori">
-            <option value="1">Mobil</option>
-            <option value="2">Pc</option>
-            <option value="3">Tilbehør</option>
+        <select name="Kategori_idKategori" class="form-control">
+            <option th:each="kategori : ${Kategorier}" th:value="${kategori.idKategori}" th:text="${kategori.navn}" />
         </select>
     </div>
     <!-- når der trykkes submit udføres action -->
