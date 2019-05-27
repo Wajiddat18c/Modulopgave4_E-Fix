@@ -6,13 +6,13 @@ import dat18c.modulopgave.efix.service.ButikService;
 
 import dat18c.modulopgave.efix.service.NyhedsbrevService;
 import dat18c.modulopgave.efix.service.ProdukterService;
+import dat18c.modulopgave.efix.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
+import javax.naming.directory.SearchResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,6 +28,9 @@ public class FrontendController {
 
     @Autowired
     ProdukterService produkterService;
+
+    @Autowired
+    SearchService searchService;
 
     @GetMapping("/")
     public String frontPage(Model model){
@@ -206,6 +209,11 @@ public class FrontendController {
         model.addAttribute("panserglas", produkterService.findById(24));
         model.addAttribute("biloplader", produkterService.findById(25));
         return "Buyaccessories";
+    }
+    @GetMapping("/search")
+    public String searchResults(@RequestParam("query") String query, Model model){
+        model.addAttribute("Results", searchService.getResults(query));
+        return "search";
     }
 
 }
