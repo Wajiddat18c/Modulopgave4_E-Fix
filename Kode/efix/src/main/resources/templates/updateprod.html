@@ -9,7 +9,7 @@
     <h1>Opdater produkt</h1>
 
     <!-- formular til indtastning af person -->
-    <form action="/admin/updateprod" method="post">
+    <form action="/admin/updateprod" class="col-md-6" method="post">
         <div class="form-group">
             <!-- hidden input felt til at få id med -->
             <input type="hidden" name="idProdukter" th:value="${produkt.idProdukter}">
@@ -24,10 +24,9 @@
 
 
         <div class="kategoriliste">
-            <select name="Kategori_idKategori">
-                <option value="1">Mobil</option>
-                <option value="2">Pc</option>
-                <option value="3">Tilbehør</option>
+            <select class="form-control" name="Kategori_idKategori">
+                <option th:each="kategori : ${Kategorier}" th:if="${kategori.idKategori == produkt.Kategori_idKategori}" selected th:value="${kategori.idKategori}" th:text="${kategori.navn}" />
+                <option th:each="kategori : ${Kategorier}" th:unless="${kategori.idKategori == produkt.Kategori_idKategori}" th:value="${kategori.idKategori}" th:text="${kategori.navn}" />
             </select>
         </div>
 

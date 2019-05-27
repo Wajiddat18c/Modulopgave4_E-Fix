@@ -1,6 +1,7 @@
 package dat18c.modulopgave.efix.controller;
 
 import dat18c.modulopgave.efix.model.*;
+import dat18c.modulopgave.efix.repository.KategoriRepo;
 import dat18c.modulopgave.efix.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,9 @@ public class BackendController {
 
     @Autowired
     ReparationspriserService reparationspriserService;
+
+    @Autowired
+    KategoriService kategoriService;
 
     @RequestMapping("/")
     public String home(){
@@ -84,6 +88,7 @@ public class BackendController {
     @GetMapping("/updateprod/{id}")
     public String Update(@PathVariable("id") int idProdukter, Model model){
         model.addAttribute("produkt", produkterService.findById(idProdukter));
+        model.addAttribute("Kategorier", kategoriService.fetchAll());
         return "updateprod";
     }
 
