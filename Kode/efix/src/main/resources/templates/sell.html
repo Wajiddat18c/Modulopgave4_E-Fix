@@ -6,11 +6,12 @@
 </head>
 <body>
 <nav th:replace="fragments/frontend :: nav" />
+<div class="container">
+<form action="/udregn" method="post" class="col-md-8">
 
-<form action="/udregn" method="post">
 
-
-    <div>
+    <div class="card">
+    <div class="card-body">
         Vælg din Mobil: <select name="pickPhone">
         <option value="1">Iphone X</option>
         <option value="2">Samsung S9</option>
@@ -18,52 +19,55 @@
         <option value="4">Iphone 4</option>
     </select>
     </div>
-    <div>
-        <p></p>
+    </div>
+    <div class="card">
+        <div class="card-body">
         1. Kan din mobil tændes:<br>
         <input type="radio" name="pickPower" value="1"> Ja<br>
         <input type="radio" name="pickPower" value="2"> Nej<br>
+        </div>
     </div>
-
-    <div>
-        <p></p>
+    <div class="card">
+    <div class="card-body">
         2. Enheds hovedfunktioner:<br>
         <input type="radio" name="pickMainFeatures" value="1"> Alle funktioner er funktionelle (dvs. berøringsskærm, knapper, netværksforbindelse, taleopkald, opladning osv.<br>
         <input type="radio" name="pickMainFeatures" value="2"> Enheden kan ikke tændes<br>
     </div>
+    </div>
 
-    <div>
-        <p></p>
+    <div class="card">
+        <div class="card-body">
         3. Enhedens udseende:<br>
         <input type="radio" name="pickAppearance" value="1"> Ingen ridser eller andre skader på krop, skærm og kamera.<br>
         <input type="radio" name="pickAppearance" value="2"> Mindre synlige ridser på krop, skærm eller kamera på grund af normal brug<br>
         <input type="radio" name="pickAppearance" value="3"> Væsentlige ridser eller skader på krop, skærm eller kamera<br>
     </div>
-
-    <div>
-        <p></p>
+    </div>
+    <div class="card">
+        <div class="card-body">
         4. Skærm:<br>
         <input type="radio" name="pickScreen" value="1"> Ingen døde pixel eller anden funktionel skade på skærmen.<br>
         <input type="radio" name="pickScreen" value="2"> Fejlfunktion, revnet eller ødelagt skærm<br>
     </div>
-
-    <div>
-        <p></p>
+    </div>
+    <div class="card">
+        <div class="card-body">
         5. Væskeskader:<br>
         <input type="radio" name="pickLiquid" value="1"> Ingen væskeskader.<br>
         <input type="radio" name="pickLiquid" value="2"> Væskeskade<br>
     </div>
-
-    <div>
-        <p></p>
+    </div>
+    <div class="card">
+        <div class="card-body">
         6. Adgangskoder:<br>
         <input type="radio" name="pickDeviceLocks" value="1"> Alle adgangskoder, skærmlås, Google-lås og SIM-lås fjernet.<br>
         <input type="radio" name="pickDeviceLocks" value="2"> Alle adgangskoder, skærmlås, Google-lås eller SIM-lås er stadig på plads<br>
     </div>
-    <button class="btn btn-danger">
-        <span class="spinner-border spinner-border-sm"></span>
+    </div>
+    <button class="btn btn-success">
         send data
     </button>
 </form>
+</div>
 </body>
 </html>
