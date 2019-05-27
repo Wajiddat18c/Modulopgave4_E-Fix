@@ -55,9 +55,6 @@ public class FrontendController {
         phone.put("Huawei P20", 4000);
         phone.put("Iphone 4", 1200);
 
-        int bad = 8;
-        int decent = 3;
-        double good = 1.5;
 
         ArrayList<Integer> phoneCondition = new ArrayList<>(3);
         phoneCondition.add(8); //[0] bad cond
@@ -98,15 +95,15 @@ public class FrontendController {
                 break;
             case 3:
                 if (pick == 1) {
-                    int a = phone.get("Huawei P20") / bad;
+                    int a = phone.get("Huawei P20") / phoneCondition.get(0);
                     System.out.println("Buy value:" + a);
                     model.addAttribute("result", a);
                 } else if (pick == 2) {
-                    int a = phone.get("Huawei P20") / decent;
+                    int a = phone.get("Huawei P20") / phoneCondition.get(1);
                     System.out.println("Buy value:" + a);
                     model.addAttribute("result", a);
                 } else if (pick == 3) {
-                    int a = (int) (phone.get("Huawei P20") / good);
+                    int a = (int) (phone.get("Huawei P20") / phoneCondition.get(2));
                     System.out.println("Buy value:" + a);
                     model.addAttribute("result", a);
                 }
