@@ -1,3 +1,6 @@
+/**
+ * dat18c.modulopgave.efix.controller
+ */
 package dat18c.modulopgave.efix.controller;
 import dat18c.modulopgave.efix.model.Calculator;
 import dat18c.modulopgave.efix.model.Images;
@@ -16,7 +19,9 @@ import javax.naming.directory.SearchResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+/**This a FrontendController that handles logic
+ *
+ */
 @Controller
 public class FrontendController {
 

@@ -1,3 +1,6 @@
+/**
+ * dat18c.modulopgave.efix.service
+ */
 package dat18c.modulopgave.efix.service;
 
 import dat18c.modulopgave.efix.model.SearchResults;
