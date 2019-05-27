@@ -59,6 +59,10 @@ public class FrontendController {
         int decent = 3;
         double good = 1.5;
 
+        ArrayList<Integer> phoneCondition = new ArrayList<>(3);
+        phoneCondition.add(8); //[0] bad cond
+        phoneCondition.add(3); //[1] decent cond
+        phoneCondition.add(2); //[2] good cond
 
         int tal = calculator.getTal();
         int pick = calculator.getPick();
@@ -67,31 +71,27 @@ public class FrontendController {
         switch (tal) {
             case 1:
                 if (pick == 1) {
-                    int a = phone.get("Iphone X") / bad;
+                    int a = phone.get("Iphone X") / phoneCondition.get(0);
+//                    a = a + 500;
                     model.addAttribute("result", a);
                 } else if (pick == 2) {
-                    int a = phone.get("Iphone X") / decent;
-                    System.out.println("Buy value:" + a);
+                    int a = phone.get("Iphone X") / phoneCondition.get(1);
                     model.addAttribute("result", a);
                 } else if (pick == 3) {
-                    int a = (int) (phone.get("Iphone X") / good);
-                    System.out.println("Buy value:" + a);
+                    int a = (int) (phone.get("Iphone X") / phoneCondition.get(2));
                     model.addAttribute("result", a);
                 }
 
                 break;
             case 2:
                 if (pick == 1) {
-                    int a = phone.get("Samsung S9") / bad;
-                    System.out.println("Buy value:" + a);
+                    int a = phone.get("Samsung S9") / phoneCondition.get(0);
                     model.addAttribute("result", a);
                 } else if (pick == 2) {
-                    int a = phone.get("Samsung S9") / decent;
-                    System.out.println("Buy value:" + a);
+                    int a = phone.get("Samsung S9") / phoneCondition.get(1);
                     model.addAttribute("result", a);
                 } else if (pick == 3) {
-                    int a = (int) (phone.get("Samsung S9") / good);
-                    System.out.println("Buy value:" + a);
+                    int a = (int) (phone.get("Samsung S9") / phoneCondition.get(2));
                     model.addAttribute("result", a);
                 }
 
@@ -114,16 +114,13 @@ public class FrontendController {
                 break;
             case 4:
                 if (pick == 1) {
-                    int a = phone.get("Iphone 4") / bad;
-                    System.out.println("Buy value:" + a);
+                    int a = phone.get("Iphone 4") / phoneCondition.get(0);
                     model.addAttribute("result", a);
                 } else if (pick == 2) {
-                    int a = phone.get("Iphone 4") / decent;
-                    System.out.println("Buy value:" + a);
+                    int a = phone.get("Iphone 4") / phoneCondition.get(1);
                     model.addAttribute("result", a);
                 } else if (pick == 3) {
-                    int a = (int) (phone.get("Iphone 4") / good);
-                    System.out.println("Buy value:" + a);
+                    int a = (int) (phone.get("Iphone 4") / phoneCondition.get(2));
                     model.addAttribute("result", a);
                 }
 
