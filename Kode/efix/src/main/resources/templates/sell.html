@@ -19,16 +19,51 @@
     </select>
     </div>
     <div>
-        Vælg din Condition: <select name="pickCondition">
-        <option value="1">Dårlig</option>
-        <option value="2">Let brugt</option>
-        <option value="3">Ny</option>
-    </select>
+        <p></p>
+        1. Kan din mobil tændes:<br>
+        <input type="radio" name="pickPower" value="1"> Ja<br>
+        <input type="radio" name="pickPower" value="2"> Nej<br>
+    </div>
+
+    <div>
+        <p></p>
+        2. Enheds hovedfunktioner:<br>
+        <input type="radio" name="pickMainFeatures" value="1"> Alle funktioner er funktionelle (dvs. berøringsskærm, knapper, netværksforbindelse, taleopkald, opladning osv.<br>
+        <input type="radio" name="pickMainFeatures" value="2"> Enheden kan ikke tændes<br>
+    </div>
+
+    <div>
+        <p></p>
+        3. Enhedens udseende:<br>
+        <input type="radio" name="pickAppearance" value="1"> Ingen ridser eller andre skader på krop, skærm og kamera.<br>
+        <input type="radio" name="pickAppearance" value="2"> Mindre synlige ridser på krop, skærm eller kamera på grund af normal brug<br>
+        <input type="radio" name="pickAppearance" value="3"> Væsentlige ridser eller skader på krop, skærm eller kamera<br>
+    </div>
+
+    <div>
+        <p></p>
+        4. Skærm:<br>
+        <input type="radio" name="pickScreen" value="1"> Ingen døde pixel eller anden funktionel skade på skærmen.<br>
+        <input type="radio" name="pickScreen" value="2"> Fejlfunktion, revnet eller ødelagt skærm<br>
+    </div>
+
+    <div>
+        <p></p>
+        5. Væskeskader:<br>
+        <input type="radio" name="pickLiquid" value="1"> Ingen væskeskader.<br>
+        <input type="radio" name="pickLiquid" value="2"> Væskeskade<br>
+    </div>
+
+    <div>
+        <p></p>
+        6. Adgangskoder:<br>
+        <input type="radio" name="pickDeviceLocks" value="1"> Alle adgangskoder, skærmlås, Google-lås og SIM-lås fjernet.<br>
+        <input type="radio" name="pickDeviceLocks" value="2"> Alle adgangskoder, skærmlås, Google-lås eller SIM-lås er stadig på plads<br>
     </div>
     <button class="btn btn-danger">
         <span class="spinner-border spinner-border-sm"></span>
         send data
     </button>
-
+</form>
 </body>
 </html>

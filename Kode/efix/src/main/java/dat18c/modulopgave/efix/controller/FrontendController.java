@@ -57,74 +57,89 @@ public class FrontendController {
 
 
         ArrayList<Integer> phoneCondition = new ArrayList<>(3);
-        phoneCondition.add(8); //[0] bad cond
+        phoneCondition.add(2); //[0] good cond
         phoneCondition.add(3); //[1] decent cond
-        phoneCondition.add(2); //[2] good cond
+        phoneCondition.add(0); //[2] bad cond
+        
 
-        int tal = calculator.getPickPhone();
-        int pick = calculator.getPickCondition();
+        int pickPhone = calculator.getPickPhone();
+        int pickPower = calculator.getPickPower();
+        int pickMainFeatures = calculator.getPickMainFeatures();
+        int pickAppearance = calculator.getPickAppearance();
+        int pickScreen = calculator.getPickScreen();
+        int pickLiquid = calculator.getPickLiquid();
+        int pickDeviceLocks = calculator.getPickDeviceLocks();
 
-
-        switch (tal) {
+        System.out.println(pickPower + "TEST" + pickMainFeatures);
+        switch (pickPhone) {
             case 1:
-                if (pick == 1) {
+                if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
+                && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Iphone X") / phoneCondition.get(0);
-//                    a = a + 500;
                     model.addAttribute("result", a);
-                } else if (pick == 2) {
+                } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
                     int a = phone.get("Iphone X") / phoneCondition.get(1);
                     model.addAttribute("result", a);
-                } else if (pick == 3) {
-                    int a = (int) (phone.get("Iphone X") / phoneCondition.get(2));
-                    model.addAttribute("result", a);
+                }
+                else {
+                    int a = 0;
+                    model.addAttribute("result",a );
                 }
 
                 break;
             case 2:
-                if (pick == 1) {
+                if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Samsung S9") / phoneCondition.get(0);
                     model.addAttribute("result", a);
-                } else if (pick == 2) {
+                } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
                     int a = phone.get("Samsung S9") / phoneCondition.get(1);
                     model.addAttribute("result", a);
-                } else if (pick == 3) {
-                    int a = (int) (phone.get("Samsung S9") / phoneCondition.get(2));
-                    model.addAttribute("result", a);
+                }
+                else {
+                    int a = 0;
+                    model.addAttribute("result",a );
                 }
 
                 break;
             case 3:
-                if (pick == 1) {
+                if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Huawei P20") / phoneCondition.get(0);
-                    System.out.println("Buy value:" + a);
                     model.addAttribute("result", a);
-                } else if (pick == 2) {
+                } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
                     int a = phone.get("Huawei P20") / phoneCondition.get(1);
-                    System.out.println("Buy value:" + a);
                     model.addAttribute("result", a);
-                } else if (pick == 3) {
-                    int a = (int) (phone.get("Huawei P20") / phoneCondition.get(2));
-                    System.out.println("Buy value:" + a);
-                    model.addAttribute("result", a);
+                }
+                else {
+                    int a = 0;
+                    model.addAttribute("result",a );
                 }
 
+
                 break;
-            case 4:
-                if (pick == 1) {
-                    int a = phone.get("Iphone 4") / phoneCondition.get(0);
-                    model.addAttribute("result", a);
-                } else if (pick == 2) {
-                    int a = phone.get("Iphone 4") / phoneCondition.get(1);
-                    model.addAttribute("result", a);
-                } else if (pick == 3) {
-                    int a = (int) (phone.get("Iphone 4") / phoneCondition.get(2));
-                    model.addAttribute("result", a);
-                }
+            case 4: if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
+                    && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
+                int a = phone.get("Iphone 4") / phoneCondition.get(0);
+                model.addAttribute("result", a);
+            } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
+                    && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
+                int a = phone.get("Iphone 4") / phoneCondition.get(1);
+                model.addAttribute("result", a);
+            }
+            else {
+                int a = 0;
+                model.addAttribute("result",a );
+            }
+
 
                 break;
             default:
                 System.out.println("Wrong input!");
-                System.out.println(tal + " + " + pick);
+//                System.out.println(pickPhone + " + " + pickCondition);
                 break;
         }
         return "calculator";
