@@ -25,6 +25,7 @@ public class ButikRepo implements Crud<Butik> {
 
         return template.query(sql, rowMapper);
     }
+
     @Override
     public Butik findById(int idButik){
         //sql query der finder butik vha. id
