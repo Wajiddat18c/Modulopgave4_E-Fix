@@ -27,3 +27,5 @@
 /nbdist/
 /.nb-gradle/
 /build/
+
+/Kode/efix/src/main/resources/application.properties
