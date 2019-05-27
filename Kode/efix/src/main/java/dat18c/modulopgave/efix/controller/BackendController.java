@@ -69,7 +69,9 @@ public class BackendController {
     }
 
     @GetMapping("/create")
-    public String showCreate(){
+    public String showCreate(Model model){
+
+        model.addAttribute("Kategorier", kategoriService.fetchAll());
         return "create";
     }
 
