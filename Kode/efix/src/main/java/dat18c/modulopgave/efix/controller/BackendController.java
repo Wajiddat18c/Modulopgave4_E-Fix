@@ -37,8 +37,8 @@ public class BackendController {
     KategoriService kategoriService;
 
     /**
-     * This method redirect to htmlpage
-     * @return htmlPage
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @RequestMapping("/")
     public String home(){
@@ -46,9 +46,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/butik")
     public String butikData(Model model){
@@ -59,10 +59,10 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param idButik
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param idButik Id from Database.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/update/{idButik}")
     public String showUpdate(@PathVariable("idButik") int idButik, Model model){
@@ -72,9 +72,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param butik
-     * @return
+     * This method redirect to htmlpage.
+     * @param butik update service,
+     * @return htmlPage.
      */
     @PostMapping("/update")
     public String updateDoIt(@ModelAttribute Butik butik){
@@ -85,9 +85,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/prod")
     public String produkterData(Model model){
@@ -98,8 +98,8 @@ public class BackendController {
     }
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/create")
     public String showCreate(Model model){
@@ -109,9 +109,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param produkter
-     * @return
+     * This method redirect to htmlpage.
+     * @param produkter called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("/create")
     public String create(@ModelAttribute Produkter produkter){
@@ -120,9 +120,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param idProdukter
-     * @return
+     * This method deletes database entry.
+     * @param idProdukter called from Database table.
+     * @return htmlPage.
      */
     @GetMapping("/delete/{iden}")
     public String delete(@PathVariable("iden") int idProdukter){
@@ -131,10 +131,10 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param idProdukter
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param idProdukter Id from Database.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/updateprod/{id}")
     public String Update(@PathVariable("id") int idProdukter, Model model){
@@ -144,9 +144,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param produkter
-     * @return
+     * This method redirect to htmlpage.
+     * @param produkter called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("/updateprod")
     public String updateIt(@ModelAttribute Produkter produkter){
@@ -155,9 +155,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/nyhed")
     public String nyhedsbrevData(Model model){
@@ -168,8 +168,8 @@ public class BackendController {
     }
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/addnyhed")
     public String showAddNyhed(){
@@ -177,9 +177,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param nyhedsbrev
-     * @return
+     * This method redirect to htmlpage.
+     * @param nyhedsbrev called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
@@ -188,9 +188,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param id
-     * @return
+     * This method deletes database entry.
+     * @param id called from Database table.
+     * @return htmlPage.
      */
     @GetMapping("deletenyhed/{id}")
     public String unsubscribe(@PathVariable int id){
@@ -199,9 +199,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/repair")
     public String repairData(Model model){
@@ -210,8 +210,8 @@ public class BackendController {
     }
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/newrepair")
     public String showNewRepair(){
@@ -219,9 +219,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param repair
-     * @return
+     * This method redirect to htmlpage.
+     * @param repair called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("newrepair")
     public String newRepair(@ModelAttribute Repair repair){
@@ -230,9 +230,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param id
-     * @return
+     * This method deletes database entry.
+     * @param id called from Database table.
+     * @return htmlPage.
      */
     @GetMapping("deleteordre/{id}")
     public String deleteOrdre(@PathVariable int id){
@@ -241,10 +241,10 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param id
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param id Id from Database.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/updaterepair/{id}")
     public String updateRepair(@PathVariable("id") int id, Model model){
@@ -253,9 +253,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param repair
-     * @return
+     * This method redirect to htmlpage.
+     * @param repair called from Model classes.
+     * @return htmlPage.
      */
 
     @PostMapping("/updaterepair")
@@ -265,9 +265,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping ("/reparationspriser")
     public String reprationspriserData(Model model){
@@ -276,8 +276,8 @@ public class BackendController {
     }
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/addreparationspriser")
     public String Showreparationspriser(){
@@ -285,9 +285,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param reparationspriser
-     * @return
+     * This method redirect to htmlpage.
+     * @param reparationspriser called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("/addreparationspriser")
     public String createpriser(@ModelAttribute Reparationspriser reparationspriser){
@@ -296,9 +296,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param id
-     * @return
+     * This method deletes database entry.
+     * @param id called from Database table.
+     * @return htmlPage.
      */
     @GetMapping("/deletereparationspriser/{id}")
     public String deletereparationspriser(@PathVariable("id") int id){
@@ -307,10 +307,10 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param id
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param id Id from Database.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/updatereparationspriser/{id}")
     public String updatepriser(@PathVariable("id") int id, Model model){
@@ -320,9 +320,9 @@ public class BackendController {
     }
 
     /**
-     *
-     * @param reparationspriser
-     * @return
+     * This method redirect to htmlpage.
+     * @param reparationspriser called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("/updatereparationspriser")
     public String updatePriser(@ModelAttribute Reparationspriser reparationspriser){

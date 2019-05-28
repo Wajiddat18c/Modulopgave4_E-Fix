@@ -38,9 +38,9 @@ public class FrontendController {
     SearchService searchService;
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/")
     public String frontPage(Model model){
@@ -50,9 +50,9 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/buy")
     public String buy(Model model){
@@ -60,9 +60,9 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/sell")
     public String sell(Model model){
@@ -70,10 +70,10 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param calculator
-     * @param model
-     * @return
+     * This method calculate phone prices
+     * @param calculator attribute called from Model class.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @PostMapping("udregn")
     public String udregn(@ModelAttribute Calculator calculator, Model model){
@@ -176,8 +176,8 @@ public class FrontendController {
 
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/addnyhed")
     public String showAddNyhed(){
@@ -185,9 +185,9 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param nyhedsbrev
-     * @return
+     * This method redirect to htmlpage.
+     * @param nyhedsbrev called from Model classes.
+     * @return htmlPage.
      */
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
@@ -201,15 +201,15 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/privatliv")
     public String privatlivsPolitik(){return "privatliv/english";}
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/newrepair")
     public String addNewRepair(){
@@ -217,8 +217,8 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @return
+     * This method redirect to htmlpage.
+     * @return htmlPage.
      */
     @GetMapping("/faq")
     public String faq(){
@@ -227,9 +227,9 @@ public class FrontendController {
 
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/Buyphone")
     public String index(Model model){
@@ -245,9 +245,9 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/Buypc")
     public String index1(Model model){
@@ -267,9 +267,9 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param model
-     * @return
+     * This method redirect to htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/Buyaccessories")
     public String index2(Model model){
@@ -289,10 +289,10 @@ public class FrontendController {
     }
 
     /**
-     *
-     * @param query
-     * @param model
-     * @return
+     * This method searches in our queries.
+     * @param query attribute from database
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
      */
     @GetMapping("/search")
     public String searchResults(@RequestParam("query") String query, Model model){
