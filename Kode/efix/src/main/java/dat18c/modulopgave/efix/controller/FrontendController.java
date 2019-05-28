@@ -5,11 +5,9 @@ package dat18c.modulopgave.efix.controller;
 import dat18c.modulopgave.efix.model.Calculator;
 import dat18c.modulopgave.efix.model.Images;
 import dat18c.modulopgave.efix.model.Nyhedsbrev;
-import dat18c.modulopgave.efix.service.ButikService;
+import dat18c.modulopgave.efix.model.Reparationspriser;
+import dat18c.modulopgave.efix.service.*;
 
-import dat18c.modulopgave.efix.service.NyhedsbrevService;
-import dat18c.modulopgave.efix.service.ProdukterService;
-import dat18c.modulopgave.efix.service.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +34,9 @@ public class FrontendController {
 
     @Autowired
     SearchService searchService;
+
+    @Autowired
+    ReparationspriserService reparationspriserService;
 
     /**
      * This method redirect to htmlpage.
@@ -286,6 +287,23 @@ public class FrontendController {
         model.addAttribute("panserglas", produkterService.findById(24));
         model.addAttribute("biloplader", produkterService.findById(25));
         return "Buyaccessories";
+    }
+
+    @GetMapping("/showrepairprice")
+    public String index3(Model model){
+        List<Images> images = new ArrayList<>();
+        images.add(new Images(10, "screen", 100, 90));
+        images.add(new Images(11, "s", 90, 500));
+        images.add(new Images(12, "mac", 90, 1000));
+
+//        images.add(new Images(1, "Iphonex", 100, 90));
+
+        model.addAttribute("images", images);
+
+        model.addAttribute("iphone", reparationspriserService.findById(1));
+        model.addAttribute("samsung", reparationspriserService.findById(2));
+        model.addAttribute("mac", reparationspriserService.findById(3));
+        return "showrepairprice";
     }
 
     /**

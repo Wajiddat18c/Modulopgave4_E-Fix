@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="fragments/frontend :: head">
+
+</head>
+<body>
+
+<nav th:replace="fragments/frontend :: nav" />
+
+<span th:each="image:${images}">
+
+    <img th:src="@{'/img/' + ${image.name} + '.jpg'}" th:style="${'position:absolute; TOP:' + image.top +'px; LEFT:' + image.left + 'px;'}"  />
+
+</span>
+
+
+<div class="columns">
+    <ul class="price">
+        <li class="header">
+            <p th:each="reparationspriser : ${iphone}">
+                <span th:text="${reparationspriser.brand}"/>
+            </p>
+
+        </li>
+        <li class="grey">
+            <p th:each="reparationspriser : ${iphone}">
+                <span th:text="${reparationspriser.model}"/>Kr
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${iphone}">
+                <span th:text="${reparationspriser.tid}"/>
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${iphone}">
+                <span th:text="${reparationspriser.beskrivelse}"/>
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${iphone}">
+                <span th:text="${reparationspriser.pris}"/>
+            </p>
+        </li>
+        <!--<li>1GB Bandwidth</li>-->
+        <li class="grey"><a href="#" class="button">Køb</a></li>
+    </ul>
+</div>
+<div class="columns">
+    <ul class="price">
+        <li class="header">
+            <p th:each="reparationspriser : ${samsung}">
+                <span th:text="${reparationspriser.brand}"/>
+            </p>
+
+        </li>
+        <li class="grey">
+            <p th:each="reparationspriser : ${samsung}">
+                <span th:text="${reparationspriser.model}"/>Kr
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${samsung}">
+                <span th:text="${reparationspriser.tid}"/>
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${samsung}">
+                <span th:text="${reparationspriser.beskrivelse}"/>
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${samsung}">
+                <span th:text="${reparationspriser.pris}"/>
+            </p>
+        </li>
+        <!--<li>1GB Bandwidth</li>-->
+        <li class="grey"><a href="#" class="button">Køb</a></li>
+    </ul>
+</div>
+<div class="columns">
+    <ul class="price">
+        <li class="header">
+            <p th:each="reparationspriser : ${mac}">
+                <span th:text="${reparationspriser.brand}"/>
+            </p>
+
+        </li>
+        <li class="grey">
+            <p th:each="reparationspriser : ${mac}">
+                <span th:text="${reparationspriser.model}"/>Kr
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${mac}">
+                <span th:text="${reparationspriser.tid}"/>
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${mac}">
+                <span th:text="${reparationspriser.beskrivelse}"/>
+            </p>
+        </li>
+        <li>
+            <p th:each="reparationspriser : ${mac}">
+                <span th:text="${reparationspriser.pris}"/>
+            </p>
+        </li>
+        <!--<li>1GB Bandwidth</li>-->
+        <li class="grey"><a href="#" class="button">Køb</a></li>
+    </ul>
+</div>
+</body>
+</html>
