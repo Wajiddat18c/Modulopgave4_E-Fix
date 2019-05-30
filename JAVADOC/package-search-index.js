@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"dat18c.modulopgave.efix"},{"l":"dat18c.modulopgave.efix.controller"},{"l":"dat18c.modulopgave.efix.model"},{"l":"dat18c.modulopgave.efix.repository"},{"l":"dat18c.modulopgave.efix.service"}]
