@@ -45,8 +45,8 @@ public class ReparationspriserRepo implements Crud<Reparationspriser>{
     }
     @Override
     public void deleteById(int id){
-        String sql = "DELETE FROM REPARATIONSPRISER WHERE idReparationspriser="+id;
-        template.update(sql);
+        String sql = "DELETE FROM REPARATIONSPRISER WHERE idReparationspriser=?";
+        template.update(sql, id);
     }
     @Override
     public void update(Reparationspriser reparationspriser){
