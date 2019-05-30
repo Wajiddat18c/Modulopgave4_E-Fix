@@ -38,6 +38,9 @@ public class FrontendController {
     @Autowired
     ReparationspriserService reparationspriserService;
 
+    @Autowired
+    BetingelseService betingelseService;
+
     /**
      * This method redirect to htmlpage.
      * @param model attribute to call Service classes.
@@ -206,7 +209,10 @@ public class FrontendController {
      * @return htmlPage.
      */
     @GetMapping("/privatliv")
-    public String privatlivsPolitik(){return "privatliv/english";}
+    public String privatlivsPolitik(Model model){
+        model.addAttribute("Privatliv", betingelseService.findById(1));
+        return "privatliv/english";
+    }
 
     /**
      * This method redirect to new repair htmlpage.
