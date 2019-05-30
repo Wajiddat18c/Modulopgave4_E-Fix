@@ -37,7 +37,7 @@ public class BackendController {
     KategoriService kategoriService;
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect index htmlpage.
      * @return htmlPage.
      */
     @RequestMapping("/")
@@ -46,7 +46,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to butik htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -59,7 +59,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update butik info htmlpage.
      * @param idButik Id from Database.
      * @param model attribute to call Service classes.
      * @return htmlPage.
@@ -72,7 +72,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update butik info htmlpage.
      * @param butik update service,
      * @return htmlPage.
      */
@@ -85,7 +85,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to produkter htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -98,7 +98,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to create new produkter htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/create")
@@ -109,7 +109,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to produkter htmlpage.
      * @param produkter called from Model classes.
      * @return htmlPage.
      */
@@ -131,7 +131,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update produkter htmlpage.
      * @param idProdukter Id from Database.
      * @param model attribute to call Service classes.
      * @return htmlPage.
@@ -144,7 +144,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update produkter htmlpage.
      * @param produkter called from Model classes.
      * @return htmlPage.
      */
@@ -155,7 +155,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to nyhed htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -168,7 +168,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to add new nyhed htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/addnyhed")
@@ -177,7 +177,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to nyhed htmlpage.
      * @param nyhedsbrev called from Model classes.
      * @return htmlPage.
      */
@@ -199,7 +199,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to repair htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -210,7 +210,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to create new repair htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/newrepair")
@@ -219,7 +219,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to html htmlpage.
      * @param repair called from Model classes.
      * @return htmlPage.
      */
@@ -241,7 +241,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update repair htmlpage.
      * @param id Id from Database.
      * @param model attribute to call Service classes.
      * @return htmlPage.
@@ -253,7 +253,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update repair htmlpage.
      * @param repair called from Model classes.
      * @return htmlPage.
      */
@@ -265,7 +265,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to reparationspriser htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -276,7 +276,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to add reparationspriser htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/addreparationspriser")
@@ -285,7 +285,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to reparationspiser htmlpage.
      * @param reparationspriser called from Model classes.
      * @return htmlPage.
      */
@@ -307,7 +307,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to update reparationspriser htmlpage.
      * @param id Id from Database.
      * @param model attribute to call Service classes.
      * @return htmlPage.
@@ -320,7 +320,7 @@ public class BackendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to reparationspriser htmlpage.
      * @param reparationspriser called from Model classes.
      * @return htmlPage.
      */
