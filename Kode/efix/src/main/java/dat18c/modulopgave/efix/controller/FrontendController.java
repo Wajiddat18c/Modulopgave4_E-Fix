@@ -51,7 +51,7 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to buy htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -61,7 +61,7 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to sell htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -177,7 +177,7 @@ public class FrontendController {
 
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to nyheds htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/addnyhed")
@@ -186,7 +186,7 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to crete new nyhed htmlpage.
      * @param nyhedsbrev called from Model classes.
      * @return htmlPage.
      */
@@ -202,14 +202,14 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to privatoplitik htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/privatliv")
     public String privatlivsPolitik(){return "privatliv/english";}
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to new repair htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/newrepair")
@@ -218,7 +218,7 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to faq htmlpage.
      * @return htmlPage.
      */
     @GetMapping("/faq")
@@ -246,7 +246,7 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to Buy pc htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -268,7 +268,7 @@ public class FrontendController {
     }
 
     /**
-     * This method redirect to htmlpage.
+     * This method redirect to Buy accessories htmlpage.
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
@@ -289,6 +289,11 @@ public class FrontendController {
         return "Buyaccessories";
     }
 
+    /**
+     * This method redirect to show repair price htmlpage.
+     * @param model attribute to call Service classes.
+     * @return htmlPage.
+     */
     @GetMapping("/showrepairprice")
     public String index3(Model model){
         List<Images> images = new ArrayList<>();
