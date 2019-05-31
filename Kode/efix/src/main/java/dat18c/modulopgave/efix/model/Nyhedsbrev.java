@@ -3,6 +3,9 @@
  */
 package dat18c.modulopgave.efix.model;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 

@@ -55,4 +55,26 @@ public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
     public void update(Nyhedsbrev nyhedsbrev) {
 
     }
+
+    public boolean checkForValidation(Nyhedsbrev nyhedsbrev){
+        String sqlSelect = "SELECT eMail FROM nyhedsbrev"+
+                " WHERE eMail=?";
+//                " AND tickets.row="+ticket.getRow()+
+//                " AND seat="+ticket.getSeat();
+        System.out.println(sqlSelect);
+        RowMapper<Nyhedsbrev> rowMapper = new BeanPropertyRowMapper<>(Nyhedsbrev.class);
+        if(!template.query(sqlSelect, rowMapper, nyhedsbrev.geteMail()).isEmpty()) {
+//            throw new RuntimeException("One or more of the selected seats were bought. Please try again from the beginning, the database was rolled back");
+            System.out.println("TEST!");
+            return false;
+        }
+        else{
+            System.out.println("Testrepo");
+
+            String sql = "INSERT INTO nyhedsbrev (idNyhedsbrev, eMail) VALUES (?, ?)";
+
+            template.update(sql, nyhedsbrev.getIdNyhedsbrev(), nyhedsbrev.geteMail());
+            return true;
+        }
+    }
 }

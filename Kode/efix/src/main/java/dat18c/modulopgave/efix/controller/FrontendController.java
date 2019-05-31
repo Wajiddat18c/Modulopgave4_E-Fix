@@ -10,10 +10,7 @@ import dat18c.modulopgave.efix.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -201,11 +198,18 @@ public class FrontendController {
     @PostMapping("/addnyhed")
     public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev) {
         if (nyhedsbrev.isAcceptPP() && nyhedsbrev.geteMail().matches("[^@]+@[^@]+\\.[a-zA-Z]{2,6}")) {
-            nyhedsbrevService.addItem(nyhedsbrev);
-            return "redirect:/";
+//            nyhedsbrevService.addItem(nyhedsbrev);
+            if(nyhedsbrevService.checkForValidation(nyhedsbrev))
+                return "redirect:/";
+            else
+                return "redirect:/nyhederror";
         } else {
-            return "addnyhed";
+            return "redirect:/nyhederror";
         }
+    }
+    @RequestMapping("/nyhederror")
+    public String nyhedError() {
+        return "nyhederror";
     }
 
     /**

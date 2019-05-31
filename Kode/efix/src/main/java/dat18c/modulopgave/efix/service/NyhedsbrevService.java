@@ -44,4 +44,5 @@ public class NyhedsbrevService implements Crud<Nyhedsbrev> {
     public void update(Nyhedsbrev nyhedsbrev) {
 
     }
+    public boolean checkForValidation(Nyhedsbrev nyhedsbrev){ return nyhedsbrevRepo.checkForValidation(nyhedsbrev);}
 }
