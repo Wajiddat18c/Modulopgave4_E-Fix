@@ -44,5 +44,12 @@ public class NyhedsbrevService implements Crud<Nyhedsbrev> {
     public void update(Nyhedsbrev nyhedsbrev) {
 
     }
+
+    /**
+     * This method checkFor unique emails in out database
+     *
+     * @param nyhedsbrev Nyhedsbrev
+     * @return boolean
+     */
     public boolean checkForValidation(Nyhedsbrev nyhedsbrev){ return nyhedsbrevRepo.checkForValidation(nyhedsbrev);}
 }

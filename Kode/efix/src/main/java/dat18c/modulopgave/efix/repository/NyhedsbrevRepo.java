@@ -56,6 +56,12 @@ public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
 
     }
 
+    /**
+     * This method checkFor unique emails in out database
+     *
+     * @param nyhedsbrev Nyhedsbrev
+     * @return boolean
+     */
     public boolean checkForValidation(Nyhedsbrev nyhedsbrev){
         String sqlSelect = "SELECT eMail FROM nyhedsbrev"+
                 " WHERE eMail=?";

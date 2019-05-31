@@ -1,3 +1,6 @@
+/**
+ * dat18c.modulopgave.efix.service
+ */
 package dat18c.modulopgave.efix.service;
 
 import dat18c.modulopgave.efix.Crud;
@@ -8,6 +11,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * This class implements Crud Interface
+ */
 @Service
 public class BetingelseService implements Crud<Betingelse> {
 

@@ -207,6 +207,12 @@ public class FrontendController {
             return "redirect:/nyhederror";
         }
     }
+
+    /**
+     * This method request nyhedserror htmlpage.
+     *
+     * @return htmlPage.
+     */
     @RequestMapping("/nyhederror")
     public String nyhedError() {
         return "nyhederror";
