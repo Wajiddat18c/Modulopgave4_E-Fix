@@ -25,7 +25,9 @@
 
         <div class="kategoriliste">
             <select class="form-control" name="Kategori_idKategori">
+                <!-- Looper igennem alle kategorier, hvis kategori id'et matcher med produktets kategori id så laves der en option med attributen selected-->
                 <option th:each="kategori : ${Kategorier}" th:if="${kategori.idKategori == produkt.Kategori_idKategori}" selected th:value="${kategori.idKategori}" th:text="${kategori.navn}" />
+                <!-- Looper igennem alle kategorier og printer de andre nedenunder produkters kategori-->
                 <option th:each="kategori : ${Kategorier}" th:unless="${kategori.idKategori == produkt.Kategori_idKategori}" th:value="${kategori.idKategori}" th:text="${kategori.navn}" />
             </select>
         </div>
