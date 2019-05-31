@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/** This class implements Crud Interface
- *
+/**
+ * This class implements Crud Interface
  */
 @Service
 public class ButikService implements Crud<Butik> {
@@ -31,16 +31,18 @@ public class ButikService implements Crud<Butik> {
     }
 
     @Override
-    public List<Butik> fetchAll(){
+    public List<Butik> fetchAll() {
 
         return butikRepo.fetchAll();
     }
+
     @Override
-    public Butik findById(int idButik){
+    public Butik findById(int idButik) {
         return butikRepo.findById(idButik);
     }
+
     @Override
-    public void update(Butik butik){
+    public void update(Butik butik) {
         butikRepo.update(butik);
     }
 }

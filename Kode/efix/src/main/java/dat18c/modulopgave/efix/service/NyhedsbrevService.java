@@ -10,8 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-/** This class implements Crud Interface
- *
+
+/**
+ * This class implements Crud Interface
  */
 @Service
 public class NyhedsbrevService implements Crud<Nyhedsbrev> {
@@ -20,17 +21,17 @@ public class NyhedsbrevService implements Crud<Nyhedsbrev> {
     NyhedsbrevRepo nyhedsbrevRepo;
 
     @Override
-    public List<Nyhedsbrev> fetchAll(){
+    public List<Nyhedsbrev> fetchAll() {
         return nyhedsbrevRepo.fetchAll();
     }
 
     @Override
-    public void addItem(Nyhedsbrev nyhedsbrev){
+    public void addItem(Nyhedsbrev nyhedsbrev) {
         nyhedsbrevRepo.addItem(nyhedsbrev);
     }
 
     @Override
-    public void deleteById(int id){
+    public void deleteById(int id) {
         nyhedsbrevRepo.deleteById(id);
     }
 

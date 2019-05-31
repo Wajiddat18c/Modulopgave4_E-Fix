@@ -2,23 +2,25 @@
  * dat18c.modulopgave.efix.controller
  */
 package dat18c.modulopgave.efix.controller;
+
 import dat18c.modulopgave.efix.model.Calculator;
 import dat18c.modulopgave.efix.model.Images;
 import dat18c.modulopgave.efix.model.Nyhedsbrev;
-import dat18c.modulopgave.efix.model.Reparationspriser;
 import dat18c.modulopgave.efix.service.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.naming.directory.SearchResult;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-/**This a FrontendController that handles logic
- *
+
+/**
+ * This a FrontendController that handles logic
  */
 @Controller
 public class FrontendController {
@@ -43,11 +45,12 @@ public class FrontendController {
 
     /**
      * This method redirect to htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/")
-    public String frontPage(Model model){
+    public String frontPage(Model model) {
 
         model.addAttribute("butikker", butikService.fetchAll());
         return "index";
@@ -55,32 +58,35 @@ public class FrontendController {
 
     /**
      * This method redirect to buy htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/buy")
-    public String buy(Model model){
+    public String buy(Model model) {
         return "buy";
     }
 
     /**
      * This method redirect to sell htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/sell")
-    public String sell(Model model){
+    public String sell(Model model) {
         return "sell";
     }
 
     /**
      * This method calculate phone prices
+     *
      * @param calculator attribute called from Model class.
-     * @param model attribute to call Service classes.
+     * @param model      attribute to call Service classes.
      * @return htmlPage.
      */
     @PostMapping("udregn")
-    public String udregn(@ModelAttribute Calculator calculator, Model model){
+    public String udregn(@ModelAttribute Calculator calculator, Model model) {
 
         HashMap<String, Integer> phone = new HashMap<>();
         phone.put("Iphone X", 6000);
@@ -107,17 +113,16 @@ public class FrontendController {
         switch (pickPhone) {
             case 1:
                 if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
-                && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Iphone X") / phoneCondition.get(0);
                     model.addAttribute("result", a);
                 } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
-                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Iphone X") / phoneCondition.get(1);
                     model.addAttribute("result", a);
-                }
-                else {
+                } else {
                     int a = 0;
-                    model.addAttribute("result",a );
+                    model.addAttribute("result", a);
                 }
 
                 break;
@@ -127,13 +132,12 @@ public class FrontendController {
                     int a = phone.get("Samsung S9") / phoneCondition.get(0);
                     model.addAttribute("result", a);
                 } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
-                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Samsung S9") / phoneCondition.get(1);
                     model.addAttribute("result", a);
-                }
-                else {
+                } else {
                     int a = 0;
-                    model.addAttribute("result",a );
+                    model.addAttribute("result", a);
                 }
 
                 break;
@@ -143,30 +147,29 @@ public class FrontendController {
                     int a = phone.get("Huawei P20") / phoneCondition.get(0);
                     model.addAttribute("result", a);
                 } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
-                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
                     int a = phone.get("Huawei P20") / phoneCondition.get(1);
                     model.addAttribute("result", a);
-                }
-                else {
+                } else {
                     int a = 0;
-                    model.addAttribute("result",a );
+                    model.addAttribute("result", a);
                 }
 
 
                 break;
-            case 4: if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
-                    && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
-                int a = phone.get("Iphone 4") / phoneCondition.get(0);
-                model.addAttribute("result", a);
-            } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
-                    && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1){
-                int a = phone.get("Iphone 4") / phoneCondition.get(1);
-                model.addAttribute("result", a);
-            }
-            else {
-                int a = 0;
-                model.addAttribute("result",a );
-            }
+            case 4:
+                if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 1
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
+                    int a = phone.get("Iphone 4") / phoneCondition.get(0);
+                    model.addAttribute("result", a);
+                } else if (pickPower == 1 && pickMainFeatures == 1 && pickAppearance == 2
+                        && pickScreen == 1 && pickLiquid == 1 && pickDeviceLocks == 1) {
+                    int a = phone.get("Iphone 4") / phoneCondition.get(1);
+                    model.addAttribute("result", a);
+                } else {
+                    int a = 0;
+                    model.addAttribute("result", a);
+                }
 
 
                 break;
@@ -181,65 +184,70 @@ public class FrontendController {
 
     /**
      * This method redirect to nyheds htmlpage.
+     *
      * @return htmlPage.
      */
     @GetMapping("/addnyhed")
-    public String showAddNyhed(){
+    public String showAddNyhed() {
         return "addnyhed";
     }
 
     /**
      * This method redirect to crete new nyhed htmlpage.
+     *
      * @param nyhedsbrev called from Model classes.
      * @return htmlPage.
      */
     @PostMapping("/addnyhed")
-    public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev){
-        if(nyhedsbrev.isAcceptPP() && nyhedsbrev.geteMail().matches("[^@]+@[^@]+\\.[a-zA-Z]{2,6}")){
+    public String addnyhed(@ModelAttribute Nyhedsbrev nyhedsbrev) {
+        if (nyhedsbrev.isAcceptPP() && nyhedsbrev.geteMail().matches("[^@]+@[^@]+\\.[a-zA-Z]{2,6}")) {
             nyhedsbrevService.addItem(nyhedsbrev);
             return "redirect:/";
-        }
-        else{
+        } else {
             return "addnyhed";
         }
     }
 
     /**
      * This method redirect to privatoplitik htmlpage.
+     *
      * @return htmlPage.
      */
     @GetMapping("/privatliv")
-    public String privatlivsPolitik(Model model){
+    public String privatlivsPolitik(Model model) {
         model.addAttribute("Privatliv", betingelseService.findById(1));
         return "privatliv/english";
     }
 
     /**
      * This method redirect to new repair htmlpage.
+     *
      * @return htmlPage.
      */
     @GetMapping("/newrepair")
-    public String addNewRepair(){
+    public String addNewRepair() {
         return "newrepair";
     }
 
     /**
      * This method redirect to faq htmlpage.
+     *
      * @return htmlPage.
      */
     @GetMapping("/faq")
-    public String faq(){
+    public String faq() {
         return "faq";
     }
 
 
     /**
      * This method redirect to htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/Buyphone")
-    public String index(Model model){
+    public String index(Model model) {
         List<Images> images = new ArrayList<>();
         images.add(new Images(1, "Iphonex", 100, 90));
         images.add(new Images(2, "S9", 90, 500));
@@ -253,11 +261,12 @@ public class FrontendController {
 
     /**
      * This method redirect to Buy pc htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/Buypc")
-    public String index1(Model model){
+    public String index1(Model model) {
         List<Images> images = new ArrayList<>();
 //        images.add(new Images(1, "Iphonex", 100, 90));
         images.add(new Images(4, "Macbookpro", 100, 90));
@@ -275,11 +284,12 @@ public class FrontendController {
 
     /**
      * This method redirect to Buy accessories htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/Buyaccessories")
-    public String index2(Model model){
+    public String index2(Model model) {
         List<Images> images = new ArrayList<>();
         images.add(new Images(7, "Appleearpods", 100, 90));
         images.add(new Images(8, "Panzerglass", 90, 500));
@@ -297,11 +307,12 @@ public class FrontendController {
 
     /**
      * This method redirect to show repair price htmlpage.
+     *
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/showrepairprice")
-    public String index3(Model model){
+    public String index3(Model model) {
         List<Images> images = new ArrayList<>();
         images.add(new Images(10, "screen", 100, 90));
         images.add(new Images(11, "s", 90, 500));
@@ -319,12 +330,13 @@ public class FrontendController {
 
     /**
      * This method searches in our queries.
+     *
      * @param query attribute from database
      * @param model attribute to call Service classes.
      * @return htmlPage.
      */
     @GetMapping("/search")
-    public String searchResults(@RequestParam("query") String query, Model model){
+    public String searchResults(@RequestParam("query") String query, Model model) {
         model.addAttribute("Results", searchService.getResults(query));
         return "search";
     }

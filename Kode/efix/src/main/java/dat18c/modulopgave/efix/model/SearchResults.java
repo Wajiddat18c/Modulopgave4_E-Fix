@@ -2,8 +2,9 @@
  * dat18c.modulopgave.efix.model
  */
 package dat18c.modulopgave.efix.model;
-/** This class defines data structure.
- *
+
+/**
+ * This class defines data structure.
  */
 public class SearchResults {
     private String produktNavn;
@@ -13,6 +14,14 @@ public class SearchResults {
     private int pris;
 
     public SearchResults() {
+    }
+
+    public SearchResults(String produktNavn, String kategoriNavn, String beskrivelse, int idProdukter, int pris) {
+        this.produktNavn = produktNavn;
+        this.kategoriNavn = kategoriNavn;
+        this.beskrivelse = beskrivelse;
+        this.idProdukter = idProdukter;
+        this.pris = pris;
     }
 
     public String getProduktNavn() {
@@ -52,14 +61,6 @@ public class SearchResults {
     }
 
     public void setPris(int pris) {
-        this.pris = pris;
-    }
-
-    public SearchResults(String produktNavn, String kategoriNavn, String beskrivelse, int idProdukter, int pris) {
-        this.produktNavn = produktNavn;
-        this.kategoriNavn = kategoriNavn;
-        this.beskrivelse = beskrivelse;
-        this.idProdukter = idProdukter;
         this.pris = pris;
     }
 }

@@ -12,11 +12,12 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-/** This is a Repository class that handles Sql quarries.
- *
+
+/**
+ * This is a Repository class that handles Sql quarries.
  */
 @Repository
-public class ProdukterRepo implements Crud<Produkter>{
+public class ProdukterRepo implements Crud<Produkter> {
 
     @Autowired
     JdbcTemplate template;
@@ -31,8 +32,9 @@ public class ProdukterRepo implements Crud<Produkter>{
         return template.query(sql, rowMapper);
 
     }
+
     @Override
-    public Produkter findById(int idProdukter){
+    public Produkter findById(int idProdukter) {
 
         String sql = "SELECT * FROM PRODUKTER WHERE idProdukter=?";
 
@@ -50,17 +52,18 @@ public class ProdukterRepo implements Crud<Produkter>{
     }
 
     @Override
-    public void deleteById(int idProdukter){
+    public void deleteById(int idProdukter) {
         // delete statement
         String sql = "DELETE FROM PRODUKTER WHERE idProdukter=?";
 
         //kald update med delete statement og id
         template.update(sql, idProdukter);
     }
+
     @Override
-    public void update(Produkter produkter){
+    public void update(Produkter produkter) {
         //sql statement der opdaterer rækken id med person objektet
-        String sql ="UPDATE PRODUKTER SET navn=?, pris=?, beskrivelse=?, Kategori_idKategori=? WHERE idProdukter=?";
+        String sql = "UPDATE PRODUKTER SET navn=?, pris=?, beskrivelse=?, Kategori_idKategori=? WHERE idProdukter=?";
         //udfør update med JdbcTemplate
         template.update(sql, produkter.getNavn(), produkter.getPris(), produkter.getBeskrivelse(), produkter.getKategori_idKategori(), produkter.getIdProdukter());
     }

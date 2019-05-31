@@ -7,6 +7,14 @@ public class Betingelse {
     int idbetingelser;
     String indhold;
 
+    public Betingelse() {
+    }
+
+    public Betingelse(int id, String indhold) {
+        this.idbetingelser = id;
+        this.indhold = indhold;
+    }
+
     public int getIdbetingelser() {
         return idbetingelser;
     }
@@ -20,14 +28,6 @@ public class Betingelse {
     }
 
     public void setIndhold(String indhold) {
-        this.indhold = indhold;
-    }
-
-    public Betingelse() {
-    }
-
-    public Betingelse(int id, String indhold) {
-        this.idbetingelser = id;
         this.indhold = indhold;
     }
 }

@@ -6,8 +6,8 @@ package dat18c.modulopgave.efix.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/** This class defines data structure.
- *
+/**
+ * This class defines data structure.
  */
 @Entity
 public class Butik {

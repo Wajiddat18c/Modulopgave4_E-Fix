@@ -12,8 +12,9 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-/** This is a Repository class that handles Sql quarries.
- *
+
+/**
+ * This is a Repository class that handles Sql quarries.
  */
 @Repository
 public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
@@ -22,7 +23,7 @@ public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
     JdbcTemplate template;
 
     @Override
-    public List<Nyhedsbrev> fetchAll(){
+    public List<Nyhedsbrev> fetchAll() {
 
         String sql = "SELECT * FROM nyhedsbrev";
 
@@ -30,15 +31,16 @@ public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
 
         return template.query(sql, rowMapper);
     }
+
     @Override
-    public void addItem(Nyhedsbrev nyhedsbrev){
+    public void addItem(Nyhedsbrev nyhedsbrev) {
         String sql = "INSERT INTO nyhedsbrev (idNyhedsbrev, eMail) VALUES (?, ?)";
 
         template.update(sql, nyhedsbrev.getIdNyhedsbrev(), nyhedsbrev.geteMail());
     }
 
     @Override
-    public void deleteById(int id){
+    public void deleteById(int id) {
         String sql = "DELETE FROM nyhedsbrev WHERE idNyhedsbrev=?";
 
         template.update(sql, id);

@@ -4,8 +4,9 @@
 package dat18c.modulopgave.efix.model;
 
 import javax.persistence.Id;
-/** This class defines data structure.
- *
+
+/**
+ * This class defines data structure.
  */
 public class Kategori {
     @Id
@@ -13,6 +14,11 @@ public class Kategori {
     private String navn;
 
     public Kategori() {
+    }
+
+    public Kategori(int idKategori, String navn) {
+        this.idKategori = idKategori;
+        this.navn = navn;
     }
 
     public int getIdKategori() {
@@ -28,11 +34,6 @@ public class Kategori {
     }
 
     public void setNavn(String navn) {
-        this.navn = navn;
-    }
-
-    public Kategori(int idKategori, String navn) {
-        this.idKategori = idKategori;
         this.navn = navn;
     }
 }

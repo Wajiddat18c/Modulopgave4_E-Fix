@@ -10,35 +10,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-/** This class implements Crud Interface
- *
+
+/**
+ * This class implements Crud Interface
  */
 @Service
-public class ReparationspriserService implements Crud<Reparationspriser>{
+public class ReparationspriserService implements Crud<Reparationspriser> {
 
     @Autowired
     ReparationspriserRepo reparationspriserRepo;
+
     @Override
-    public List<Reparationspriser> fetchAll(){
+    public List<Reparationspriser> fetchAll() {
         return reparationspriserRepo.fetchAll();
     }
 
     @Override
-    public void addItem(Reparationspriser reparationspriser){
+    public void addItem(Reparationspriser reparationspriser) {
         reparationspriserRepo.addItem(reparationspriser);
     }
+
     @Override
-    public void deleteById(int id){
+    public void deleteById(int id) {
         reparationspriserRepo.deleteById(id);
     }
 
     @Override
-    public Reparationspriser findById(int id){
+    public Reparationspriser findById(int id) {
         return reparationspriserRepo.findById(id);
     }
 
     @Override
-    public void update(Reparationspriser reparationspriser){
+    public void update(Reparationspriser reparationspriser) {
         reparationspriserRepo.update(reparationspriser);
     }
 }

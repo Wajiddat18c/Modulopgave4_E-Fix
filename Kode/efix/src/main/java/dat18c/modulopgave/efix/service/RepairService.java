@@ -8,36 +8,40 @@ import dat18c.modulopgave.efix.model.Repair;
 import dat18c.modulopgave.efix.repository.RepairRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
-/** This class implements Crud Interface
- *
+
+/**
+ * This class implements Crud Interface
  */
 @Service
-public class RepairService implements Crud<Repair>{
+public class RepairService implements Crud<Repair> {
 
     @Autowired
     RepairRepo repairRepo;
+
     @Override
-    public List<Repair> fetchAll(){
+    public List<Repair> fetchAll() {
         return repairRepo.fetchAll();
     }
+
     @Override
-    public void addItem(Repair repair){
+    public void addItem(Repair repair) {
         repairRepo.addItem(repair);
     }
 
     @Override
-    public void deleteById(int id){
+    public void deleteById(int id) {
         repairRepo.deleteById(id);
     }
+
     @Override
-    public Repair findById(int id){
+    public Repair findById(int id) {
         return repairRepo.findById(id);
     }
+
     @Override
-    public void update(Repair repair){
+    public void update(Repair repair) {
         repairRepo.update(repair);
     }
 }

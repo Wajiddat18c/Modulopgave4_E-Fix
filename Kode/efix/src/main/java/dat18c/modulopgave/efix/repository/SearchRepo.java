@@ -12,8 +12,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/** This is a Repository class that handles Sql quarries.
- *
+/**
+ * This is a Repository class that handles Sql quarries.
  */
 @Repository
 public class SearchRepo {
@@ -22,17 +22,18 @@ public class SearchRepo {
 
     /**
      * This method gets a search results from Database query.
+     *
      * @param query search from Database
      * @return template
      */
-    public List<SearchResults> getResults(String query){
+    public List<SearchResults> getResults(String query) {
         String sql = "SELECT pris, idProdukter, beskrivelse, produkter.navn AS produktNavn, kategorier.navn AS kategoriNavn" +
                 " FROM produkter" +
                 " INNER JOIN kategorier ON kategorier.idKategori = produkter.Kategori_idKategori" +
-                " WHERE beskrivelse LIKE '%"+query+"%'" +
-                " OR produkter.navn LIKE '%"+query+"%'" +
-                " OR produkter.pris LIKE '%"+query+"%'" +
-                " OR kategorier.navn LIKE '%"+query+"%'";
+                " WHERE beskrivelse LIKE '%" + query + "%'" +
+                " OR produkter.navn LIKE '%" + query + "%'" +
+                " OR produkter.pris LIKE '%" + query + "%'" +
+                " OR kategorier.navn LIKE '%" + query + "%'";
         RowMapper<SearchResults> rowMapper = new BeanPropertyRowMapper<>(SearchResults.class);
 
         return template.query(sql, rowMapper);
