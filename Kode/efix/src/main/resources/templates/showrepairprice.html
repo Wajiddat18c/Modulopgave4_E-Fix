@@ -18,13 +18,13 @@
     <ul class="price">
         <li class="header">
             <p th:each="reparationspriser : ${iphone}">
-                <span th:text="${reparationspriser.brand}"/>
+                <span th:text="${reparationspriser.brand +' '+ reparationspriser.model}"/>
             </p>
 
         </li>
         <li class="grey">
             <p th:each="reparationspriser : ${iphone}">
-                <span th:text="${reparationspriser.model}"/>Kr
+                <span th:text="${reparationspriser.pris}"/>Kr
             </p>
         </li>
         <li>
@@ -35,11 +35,6 @@
         <li>
             <p th:each="reparationspriser : ${iphone}">
                 <span th:text="${reparationspriser.beskrivelse}"/>
-            </p>
-        </li>
-        <li>
-            <p th:each="reparationspriser : ${iphone}">
-                <span th:text="${reparationspriser.pris}"/>
             </p>
         </li>
         <!--<li>1GB Bandwidth</li>-->
@@ -50,13 +45,13 @@
     <ul class="price">
         <li class="header">
             <p th:each="reparationspriser : ${samsung}">
-                <span th:text="${reparationspriser.brand}"/>
+                <span th:text="${reparationspriser.brand +' '+ reparationspriser.model}"/>
             </p>
 
         </li>
         <li class="grey">
             <p th:each="reparationspriser : ${samsung}">
-                <span th:text="${reparationspriser.model}"/>Kr
+                <span th:text="${reparationspriser.pris}"/>Kr
             </p>
         </li>
         <li>
@@ -67,11 +62,6 @@
         <li>
             <p th:each="reparationspriser : ${samsung}">
                 <span th:text="${reparationspriser.beskrivelse}"/>
-            </p>
-        </li>
-        <li>
-            <p th:each="reparationspriser : ${samsung}">
-                <span th:text="${reparationspriser.pris}"/>
             </p>
         </li>
         <!--<li>1GB Bandwidth</li>-->
@@ -82,13 +72,13 @@
     <ul class="price">
         <li class="header">
             <p th:each="reparationspriser : ${mac}">
-                <span th:text="${reparationspriser.brand}"/>
+                <span th:text="${reparationspriser.brand +' '+ reparationspriser.model}"/>
             </p>
 
         </li>
         <li class="grey">
             <p th:each="reparationspriser : ${mac}">
-                <span th:text="${reparationspriser.model}"/>Kr
+                <span th:text="${reparationspriser.pris}"/>Kr
             </p>
         </li>
         <li>
@@ -99,11 +89,6 @@
         <li>
             <p th:each="reparationspriser : ${mac}">
                 <span th:text="${reparationspriser.beskrivelse}"/>
-            </p>
-        </li>
-        <li>
-            <p th:each="reparationspriser : ${mac}">
-                <span th:text="${reparationspriser.pris}"/>
             </p>
         </li>
         <!--<li>1GB Bandwidth</li>-->
