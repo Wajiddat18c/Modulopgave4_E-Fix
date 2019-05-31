@@ -39,9 +39,9 @@ public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
 
     @Override
     public void deleteById(int id){
-        String sql = "DELETE FROM nyhedsbrev WHERE idNyhedsbrev="+id;
+        String sql = "DELETE FROM nyhedsbrev WHERE idNyhedsbrev=?";
 
-        template.update(sql);
+        template.update(sql, id);
     }
 
     @Override

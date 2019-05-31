@@ -38,9 +38,9 @@ public class RepairRepo implements Crud<Repair>{
     }
     @Override
     public void deleteById(int id){
-        String sql = "DELETE FROM repair WHERE idRepair="+id;
+        String sql = "DELETE FROM repair WHERE idRepair=?";
 
-        template.update(sql);
+        template.update(sql, id);
     }
     @Override
     public Repair findById(int id){

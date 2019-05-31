@@ -36,6 +36,9 @@ public class BackendController {
     @Autowired
     KategoriService kategoriService;
 
+    @Autowired
+    BetingelseService betingelseService;
+
     /**
      * This method redirect index htmlpage.
      * @return htmlPage.
@@ -329,6 +332,15 @@ public class BackendController {
         reparationspriserService.update(reparationspriser);
         return "redirect:/admin/reparationspriser";
     }
-
+    @GetMapping("/betingelser")
+    public String visBetingelser(Model model){
+        model.addAttribute("Privatliv", betingelseService.findById(1));
+        return "betingelser";
+    }
+    @PostMapping("/betingelser")
+    public String test(@ModelAttribute Betingelse betingelse){
+        betingelseService.update(betingelse);
+        return "redirect:/admin/";
+    }
 
 }
