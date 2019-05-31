@@ -34,7 +34,7 @@
             last_name: <input type="text" name="last_name" class="form-control" th:value="${rep.last_name}">
         </div>
         <div class="form-group">
-            phone: <input type="text" name="phone" class="form-control" th:value="${rep.phone}">
+            phone: <input type="text" name="phone" required pattern="^[0-9]*$" class="form-control" th:value="${rep.phone}">
         </div>
         <div class="form-group">
             email: <input type="text" name="email" class="form-control" th:value="${rep.email}">

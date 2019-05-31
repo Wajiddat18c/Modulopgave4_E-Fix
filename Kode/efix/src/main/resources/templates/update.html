@@ -18,7 +18,7 @@
             <input type="text" name="adresse" class="form-control" th:value="${butikker.adresse}">
         </div>
         <div class="form-group">
-            <input type="text" name="mobilNummer" class="form-control" th:value="${butikker.mobilNummer}">
+            <input type="text" name="mobilNummer" required pattern="^[0-9]*$" class="form-control" th:value="${butikker.mobilNummer}">
         </div>
         <div class="form-group">
             <input type="text" name="beskrivelse" class="form-control" th:value="${butikker.beskrivelse}">
