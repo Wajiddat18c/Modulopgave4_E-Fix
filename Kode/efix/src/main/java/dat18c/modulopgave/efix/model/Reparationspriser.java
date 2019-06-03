@@ -8,6 +8,7 @@ import javax.persistence.Id;
 
 /**
  * This class defines data structure.
+ * @author Thomas Broe
  */
 @Entity
 public class Reparationspriser {

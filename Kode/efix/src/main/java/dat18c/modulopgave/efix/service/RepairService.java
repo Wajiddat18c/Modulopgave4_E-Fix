@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * This class implements Crud Interface
+ * @author Thomas Broe
  */
 @Service
 public class RepairService implements Crud<Repair> {

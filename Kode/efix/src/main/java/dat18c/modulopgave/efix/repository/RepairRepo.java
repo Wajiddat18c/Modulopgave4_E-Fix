@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * This is a Repository class that handles Sql quarries.
+ * @author Thomas Broe
  */
 @Repository
 public class RepairRepo implements Crud<Repair> {

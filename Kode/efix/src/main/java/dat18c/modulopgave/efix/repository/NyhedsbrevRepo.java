@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * This is a Repository class that handles Sql quarries.
+ * @author Wajid Ahmad
  */
 @Repository
 public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
@@ -65,8 +66,7 @@ public class NyhedsbrevRepo implements Crud<Nyhedsbrev> {
     public boolean checkForValidation(Nyhedsbrev nyhedsbrev){
         String sqlSelect = "SELECT eMail FROM nyhedsbrev"+
                 " WHERE eMail=?";
-//                " AND tickets.row="+ticket.getRow()+
-//                " AND seat="+ticket.getSeat();
+
         System.out.println(sqlSelect);
         RowMapper<Nyhedsbrev> rowMapper = new BeanPropertyRowMapper<>(Nyhedsbrev.class);
         if(!template.query(sqlSelect, rowMapper, nyhedsbrev.geteMail()).isEmpty()) {

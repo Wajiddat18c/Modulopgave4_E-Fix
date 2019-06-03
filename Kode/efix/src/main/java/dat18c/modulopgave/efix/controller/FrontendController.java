@@ -18,6 +18,11 @@ import java.util.List;
 
 /**
  * This a FrontendController that handles logic
+ *
+ * @author Aleksandr Sorokin
+ * @author Ali Al-Sharefi
+ * @author Thomas Broe
+ * @author Wajid Ahmad
  */
 @Controller
 public class FrontendController {

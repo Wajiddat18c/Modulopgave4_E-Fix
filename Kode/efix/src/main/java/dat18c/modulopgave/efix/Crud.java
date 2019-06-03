@@ -9,6 +9,9 @@ import java.util.List;
 /**
  * This class is an CRUD Interface that gets implemented in All Service and Repository classes.
  *
+ * @author Aleksandr Sorokin
+ * @author Wajid Ahmad
+ *
  * @param <T> Is a generic variable.
  */
 public interface Crud<T> {

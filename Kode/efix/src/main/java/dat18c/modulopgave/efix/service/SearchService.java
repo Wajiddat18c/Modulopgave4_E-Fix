@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * This class implements Crud Interface
+ * @author Aleksandr Sorokin
  */
 @Service
 public class SearchService {

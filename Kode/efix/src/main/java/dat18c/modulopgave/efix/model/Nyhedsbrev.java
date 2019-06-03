@@ -11,6 +11,7 @@ import javax.persistence.Id;
 
 /**
  * This class defines data structure.
+ * @author Wajid Ahmad
  */
 @Entity
 public class Nyhedsbrev {

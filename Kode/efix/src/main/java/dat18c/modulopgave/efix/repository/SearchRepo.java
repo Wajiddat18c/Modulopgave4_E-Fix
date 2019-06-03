@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * This is a Repository class that handles Sql quarries.
+ * @author Aleksandr Sorokin
  */
 @Repository
 public class SearchRepo {

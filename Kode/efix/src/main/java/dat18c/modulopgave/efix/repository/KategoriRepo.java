@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * This is a Repository class that handles Sql quarries.
+ * @author Ali Al-Sharefi
  */
 @Repository
 public class KategoriRepo implements Crud<Kategori> {

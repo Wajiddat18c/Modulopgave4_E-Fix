@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * This is a Repository class that handles Sql quarries.
+ * @author Wajid Ahmad
  */
 @Repository
 public class ProdukterRepo implements Crud<Produkter> {

@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * This class implements Crud Interface
+ * @author Wajid Ahmad
  */
 @Service
 public class ProdukterService implements Crud<Produkter> {

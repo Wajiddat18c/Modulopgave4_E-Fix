@@ -13,6 +13,7 @@ import java.util.List;
 
 /**
  * This class implements Crud Interface
+ * @author Ali Al-Sharefi
  */
 @Service
 public class ReparationspriserService implements Crud<Reparationspriser> {

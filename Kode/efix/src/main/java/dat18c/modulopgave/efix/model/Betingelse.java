@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 /**
  * This class defines data structure.
+ * @author Thomas Broe
  */
 
 public class Betingelse {

@@ -5,6 +5,7 @@ package dat18c.modulopgave.efix.model;
 
 /**
  * This class defines data structure.
+ * @author Ali Al-Sharefi
  */
 public class Images {
     int id;

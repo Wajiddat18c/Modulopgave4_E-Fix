@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * This a BackendController that handles logic
+ * @author Aleksandr Sorokin
+ * @author Ali Al-Sharefi
+ * @author Thomas Broe
+ * @author Wajid Ahmad
  */
 @Controller
 @RequestMapping("/admin/")
